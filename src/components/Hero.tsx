@@ -1,3 +1,4 @@
+import ImageWithFallback from './ImageWithFallback';
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Play, Shield, Award, Users, Clock } from 'lucide-react';
 
@@ -42,12 +43,12 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-6">
               <button className="group bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full hover:from-orange-600 hover:to-red-600 transition-all duration-300 font-semibold flex items-center justify-center space-x-3 shadow-2xl hover:shadow-orange-500/25 transform hover:scale-105 hover:-translate-y-1">
                 <span>Book Appointment</span>
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform"  />
               </button>
               
               <button className="group flex items-center space-x-3 text-white hover:text-orange-300 transition-all duration-300 font-semibold">
                 <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 group-hover:scale-110">
-                  <Play size={20} className="ml-1" />
+                  <Play size={20} className="ml-1"  />
                 </div>
                 <span>Watch Our Story</span>
               </button>
@@ -56,7 +57,7 @@ const Hero = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
               <div className="text-center group cursor-pointer">
                 <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
-                  <Shield className="text-orange-400" size={32} />
+                  <Shield className="text-orange-400" size={32}  />
                 </div>
                 <div className="text-3xl font-bold text-white group-hover:text-orange-300 transition-colors">24/7</div>
                 <div className="text-blue-200 text-sm">Emergency Care</div>
@@ -64,7 +65,7 @@ const Hero = () => {
               
               <div className="text-center group cursor-pointer">
                 <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
-                  <Award className="text-orange-400" size={32} />
+                  <Award className="text-orange-400" size={32}  />
                 </div>
                 <div className="text-3xl font-bold text-white group-hover:text-orange-300 transition-colors">25+</div>
                 <div className="text-blue-200 text-sm">Years Experience</div>
@@ -72,7 +73,7 @@ const Hero = () => {
               
               <div className="text-center group cursor-pointer">
                 <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
-                  <Users className="text-orange-400" size={32} />
+                  <Users className="text-orange-400" size={32}  />
                 </div>
                 <div className="text-3xl font-bold text-white group-hover:text-orange-300 transition-colors">50+</div>
                 <div className="text-blue-200 text-sm">Expert Doctors</div>
@@ -80,7 +81,7 @@ const Hero = () => {
               
               <div className="text-center group cursor-pointer">
                 <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
-                  <Clock className="text-orange-400" size={32} />
+                  <Clock className="text-orange-400" size={32}  />
                 </div>
                 <div className="text-3xl font-bold text-white group-hover:text-orange-300 transition-colors">15K+</div>
                 <div className="text-blue-200 text-sm">Happy Patients</div>
@@ -95,7 +96,7 @@ const Hero = () => {
                   src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Diverse medical team providing compassionate patient care"
                   className="w-full h-[700px] object-cover hover:scale-105 transition-transform duration-700"
-                />
+                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
               </div>
               
@@ -115,7 +116,7 @@ const Hero = () => {
               <div className="absolute -bottom-8 -right-8 bg-white rounded-2xl p-6 shadow-2xl animate-float-delayed">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Award className="text-blue-600" size={24} />
+                    <Award className="text-blue-600" size={24}  />
                   </div>
                   <div>
                     <div className="font-bold text-gray-800">Award Winning</div>

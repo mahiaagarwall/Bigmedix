@@ -1,3 +1,4 @@
+import ImageWithFallback from './ImageWithFallback';
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Calendar, Send, MessageCircle, Users, Award } from 'lucide-react';
 

@@ -1,3 +1,4 @@
+import ImageWithFallback from './ImageWithFallback';
 import React, { useEffect, useRef, useState } from 'react';
 import { Award, Users, Clock, MapPin, CheckCircle, Play } from 'lucide-react';
 
@@ -100,7 +101,7 @@ const About = () => {
               ].map((item, index) => (
                 <div key={index} className="flex items-start space-x-4 group">
                   <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
-                    <CheckCircle className="text-white" size={16} />
+                    <CheckCircle className="text-white" size={16}     />
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2 text-lg group-hover:text-blue-600 transition-colors">
@@ -121,7 +122,7 @@ const About = () => {
               
               <button className="group flex items-center space-x-3 text-blue-600 hover:text-orange-500 transition-all duration-300 font-semibold px-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-orange-100 transition-all duration-300 group-hover:scale-110">
-                  <Play size={20} className="ml-1" />
+                  <Play size={20} className="ml-1"     />
                 </div>
                 <span>Watch Our Story</span>
               </button>
@@ -136,7 +137,7 @@ const About = () => {
                     src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Diverse medical team collaborating on patient care"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
+                      />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
                 </div>
                 <div className="relative overflow-hidden rounded-3xl shadow-xl group">
@@ -144,7 +145,7 @@ const About = () => {
                     src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Modern medical facility with advanced equipment"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
+                      />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
                 </div>
               </div>
@@ -154,7 +155,7 @@ const About = () => {
                     src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Healthcare professional providing compassionate patient care"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
+                      />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
                 </div>
                 <div className="relative overflow-hidden rounded-3xl shadow-xl group">
@@ -162,7 +163,7 @@ const About = () => {
                     src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="State-of-the-art medical equipment and technology"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
+                      />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
                 </div>
               </div>
@@ -180,7 +181,7 @@ const About = () => {
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className={`w-20 h-20 bg-gradient-to-br ${stat.color} rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
-                <stat.icon className="text-white" size={36} />
+                <stat.icon className="text-white" size={36}     />
               </div>
               <div className="text-4xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                 {stat.number}

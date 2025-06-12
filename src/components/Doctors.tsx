@@ -1,3 +1,4 @@
+import ImageWithFallback from './ImageWithFallback';
 import React, { useEffect, useRef, useState } from 'react';
 import { Star, Calendar, MapPin, Award, GraduationCap } from 'lucide-react';
 
@@ -114,12 +115,12 @@ const Doctors = () => {
                   src={doctor.image}
                   alt={`${doctor.name} - ${doctor.specialty}`}
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 
                 {/* Rating Badge */}
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-2 flex items-center space-x-1 shadow-lg">
-                  <Star className="text-yellow-400 fill-current" size={16} />
+                  <Star className="text-yellow-400 fill-current" size={16}  />
                   <span className="text-sm font-bold text-gray-800">{doctor.rating}</span>
                 </div>
 
@@ -136,11 +137,11 @@ const Doctors = () => {
                   </h3>
                   <div className="flex items-center space-x-4 text-sm text-gray-600 mb-4">
                     <div className="flex items-center space-x-1">
-                      <Calendar size={16} />
+                      <Calendar size={16}  />
                       <span>{doctor.experience}</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      <MapPin size={16} />
+                      <MapPin size={16}  />
                       <span>{doctor.location}</span>
                     </div>
                   </div>
@@ -148,7 +149,7 @@ const Doctors = () => {
 
                 <div className="space-y-3">
                   <div className="flex items-center space-x-2 text-sm text-gray-600">
-                    <GraduationCap size={16} className="text-blue-600" />
+                    <GraduationCap size={16} className="text-blue-600"  />
                     <span className="font-medium">{doctor.education}</span>
                   </div>
                   
@@ -160,7 +161,7 @@ const Doctors = () => {
                           key={i}
                           size={14}
                           className={i < Math.floor(doctor.rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}
-                        />
+                         />
                       ))}
                     </div>
                   </div>

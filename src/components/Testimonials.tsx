@@ -1,3 +1,4 @@
+import ImageWithFallback from './ImageWithFallback';
 import React, { useEffect, useRef, useState } from 'react';
 import { Star, Quote, ThumbsUp, Heart } from 'lucide-react';
 
