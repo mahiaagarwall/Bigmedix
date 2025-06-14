@@ -133,37 +133,37 @@ const About = () => {
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6">
                 <div className="relative overflow-hidden rounded-3xl shadow-xl group">
-                  <img
+                  <ImageWithFallback
                     src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Diverse medical team collaborating on patient care"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
                 </div>
                 <div className="relative overflow-hidden rounded-3xl shadow-xl group">
-                  <img
+                  <ImageWithFallback
                     src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Modern medical facility with advanced equipment"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
                 </div>
               </div>
               <div className="space-y-6 pt-12">
                 <div className="relative overflow-hidden rounded-3xl shadow-xl group">
-                  <img
+                  <ImageWithFallback
                     src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Healthcare professional providing compassionate patient care"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
                 </div>
                 <div className="relative overflow-hidden rounded-3xl shadow-xl group">
-                  <img
+                  <ImageWithFallback
                     src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="State-of-the-art medical equipment and technology"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
                 </div>
               </div>

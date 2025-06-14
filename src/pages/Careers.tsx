@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Briefcase, MapPin, Clock, DollarSign, Users, Award, Heart, GraduationCap, Search, Filter } from 'lucide-react';
+import { Briefcase, MapPin, Clock, DollarSign, Users, Heart, GraduationCap, Search, Filter } from 'lucide-react';
 
 const Careers = () => {
   const [searchTerm, setSearchTerm] = useState('');
