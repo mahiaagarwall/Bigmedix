@@ -4,7 +4,6 @@ import { Star, Quote, ThumbsUp, Heart } from 'lucide-react';
 
 const Testimonials = () => {
   const [visibleItems, setVisibleItems] = useState(new Set());
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const observerRef = useRef();
 
   useEffect(() => {
@@ -133,7 +132,7 @@ const Testimonials = () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-4">
                   <div className="relative">
-                    <img
+                    <ImageWithFallback
                       src={testimonial.image}
                       alt={`${testimonial.name} - satisfied patient`}
                       className="w-14 h-14 rounded-full object-cover border-2 border-orange-400 group-hover:border-orange-300 transition-colors"

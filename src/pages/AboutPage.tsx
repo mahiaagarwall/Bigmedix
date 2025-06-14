@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Award, Users, Clock, MapPin, CheckCircle, Heart, Shield, Target, Eye } from 'lucide-react';
 
 const AboutPage = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const [counters, setCounters] = useState({ years: 0, doctors: 0, patients: 0, locations: 0 });
   const sectionRef = useRef();
 

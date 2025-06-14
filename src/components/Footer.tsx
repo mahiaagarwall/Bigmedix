@@ -1,4 +1,3 @@
-import ImageWithFallback from './ImageWithFallback';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin, Clock, Heart, Award, Shield, Users } from 'lucide-react';
