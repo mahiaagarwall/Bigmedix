@@ -101,7 +101,7 @@ const Hero = () => {
               </div>
               
               {/* Floating Cards */}
-              <div className="absolute -top-8 -left-8 bg-white rounded-2xl p-6 shadow-2xl animate-float">
+              <div className="absolute -top-8 -left-8 bg-white rounded-2xl p-6 shadow-2xl border border-gray-300 animate-float">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                     <div className="w-6 h-6 bg-green-500 rounded-full animate-pulse"></div>
