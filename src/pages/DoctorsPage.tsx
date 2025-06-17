@@ -144,10 +144,10 @@ const DoctorsPage = () => {
   return (
     <div className="pt-32">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-from to-primary-to text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-64 h-64 bg-card-bg rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-64 h-64 bg-accent rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -166,7 +166,7 @@ const DoctorsPage = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 bg-card-bg border-b">
+      <section className="py-12 bg-white border-b">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-4">
             {specialties.map((specialty) => (
@@ -175,8 +175,8 @@ const DoctorsPage = () => {
                 onClick={() => setSelectedSpecialty(specialty)}
                 className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
                   selectedSpecialty === specialty
-                    ? 'bg-btn-primary text-white shadow-lg transform scale-105'
-                    : 'bg-card-bg-alt text-text-paragraph hover:bg-primary-from/10 hover:text-primary-from'
+                    ? 'bg-blue-600 text-white shadow-lg transform scale-105'
+                    : 'bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-600'
                 }`}
               >
                 {specialty === 'all' ? 'All Specialties' : specialty}
@@ -195,7 +195,7 @@ const DoctorsPage = () => {
                 key={index}
                 data-index={index}
                 data-animate="doctor"
-                className={`group bg-card-bg rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer transform hover:-translate-y-6 ${
+                className={`group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer transform hover:-translate-y-6 ${
                   visibleItems.has(index.toString()) 
                     ? 'translate-y-0 opacity-100' 
                     : 'translate-y-8 opacity-0'
@@ -213,22 +213,22 @@ const DoctorsPage = () => {
                   {/* Rating Badge */}
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-2 flex items-center space-x-1 shadow-lg">
                     <Star className="text-yellow-400 fill-current" size={16} />
-                    <span className="text-sm font-bold text-heading">{doctor.rating}</span>
+                    <span className="text-sm font-bold text-gray-800">{doctor.rating}</span>
                   </div>
 
                   {/* Specialty Badge */}
-                  <div className="absolute bottom-4 left-4 bg-gradient-to-r from-primary-from to-primary-to text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                  <div className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                     {doctor.specialty}
                   </div>
                 </div>
                 
                 <div className="p-6 space-y-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-heading mb-2 group-hover:text-primary-from transition-colors">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                       {doctor.name}
                     </h3>
-                    <div className="text-primary-from font-medium mb-2">{doctor.position}</div>
-                    <div className="flex items-center space-x-4 text-sm text-text-paragraph mb-4">
+                    <div className="text-blue-600 font-medium mb-2">{doctor.position}</div>
+                    <div className="flex items-center space-x-4 text-sm text-gray-600 mb-4">
                       <div className="flex items-center space-x-1">
                         <Calendar size={16} />
                         <span>{doctor.experience}</span>
@@ -241,18 +241,18 @@ const DoctorsPage = () => {
                   </div>
 
                   <div className="space-y-3">
-                    <div className="flex items-center space-x-2 text-sm text-text-paragraph">
-                      <GraduationCap size={16} className="text-primary-from" />
+                    <div className="flex items-center space-x-2 text-sm text-gray-600">
+                      <GraduationCap size={16} className="text-blue-600" />
                       <span className="font-medium">{doctor.education}</span>
                     </div>
                     
-                    <div className="flex items-center space-x-2 text-sm text-text-paragraph">
+                    <div className="flex items-center space-x-2 text-sm text-gray-600">
                       <Clock size={16} className="text-green-600" />
                       <span>{doctor.availability}</span>
                     </div>
                     
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-text-paragraph">{doctor.reviews} patient reviews</span>
+                      <span className="text-gray-600">{doctor.reviews} patient reviews</span>
                       <div className="flex items-center space-x-1">
                         {[...Array(5)].map((_, i) => (
                           <Star
@@ -266,15 +266,15 @@ const DoctorsPage = () => {
                   </div>
 
                   <div className="pt-4 border-t border-gray-100">
-                  <div className="text-sm text-text-paragraph mb-3">Specialties:</div>
+                    <div className="text-sm text-gray-600 mb-3">Specialties:</div>
                     <div className="flex flex-wrap gap-2">
                       {doctor.specialties.slice(0, 2).map((specialty, i) => (
-                        <span key={i} className="bg-primary-from/10 text-primary-from px-3 py-1 rounded-full text-xs font-medium">
+                        <span key={i} className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-xs font-medium">
                           {specialty}
                         </span>
                       ))}
                       {doctor.specialties.length > 2 && (
-                        <span className="bg-card-bg-alt text-text-paragraph px-3 py-1 rounded-full text-xs font-medium">
+                        <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-medium">
                           +{doctor.specialties.length - 2} more
                         </span>
                       )}
@@ -282,11 +282,11 @@ const DoctorsPage = () => {
                   </div>
 
                   <div className="flex space-x-2">
-                    <button className="flex-1 bg-gradient-to-r from-primary-from to-primary-to text-white py-3 rounded-full hover:from-primary-to hover:to-primary-from transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <button className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
                       Book Appointment
                     </button>
-                    <button className="w-12 h-12 bg-card-bg-alt rounded-full flex items-center justify-center hover:bg-primary-from/10 transition-colors">
-                      <Phone size={18} className="text-primary-from" />
+                    <button className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors">
+                      <Phone size={18} className="text-blue-600" />
                     </button>
                   </div>
                 </div>
@@ -297,7 +297,7 @@ const DoctorsPage = () => {
       </section>
 
       {/* Doctor Spotlight */}
-      <section className="py-20 bg-card-bg">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 lg:p-12 shadow-xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -309,12 +309,12 @@ const DoctorsPage = () => {
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary-from to-primary-to rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
                       <Award className="text-white" size={20} />
                     </div>
                     <div>
-                      <div className="font-bold text-heading">Chief Cardiologist</div>
-                      <div className="text-sm text-text-paragraph">Department Head</div>
+                      <div className="font-bold text-gray-800">Chief Cardiologist</div>
+                      <div className="text-sm text-gray-600">Department Head</div>
                     </div>
                   </div>
                 </div>
@@ -322,19 +322,19 @@ const DoctorsPage = () => {
               
               <div className="space-y-6">
                 <div>
-                  <div className="text-primary-from font-medium mb-2">Doctor Spotlight</div>
-                  <h3 className="text-4xl font-bold text-heading mb-4">{doctors[0].name}</h3>
-                  <div className="text-xl text-text-paragraph mb-6">{doctors[0].position}</div>
+                  <div className="text-blue-600 font-medium mb-2">Doctor Spotlight</div>
+                  <h3 className="text-4xl font-bold text-gray-900 mb-4">{doctors[0].name}</h3>
+                  <div className="text-xl text-gray-600 mb-6">{doctors[0].position}</div>
                 </div>
                 
-                <p className="text-text-paragraph leading-relaxed text-lg">
+                <p className="text-gray-600 leading-relaxed text-lg">
                   {doctors[0].bio}
                 </p>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-bold text-heading mb-3">Education & Certifications</h4>
-                    <ul className="space-y-2 text-sm text-text-paragraph">
+                    <h4 className="font-bold text-gray-900 mb-3">Education & Certifications</h4>
+                    <ul className="space-y-2 text-sm text-gray-600">
                       <li>• {doctors[0].education}</li>
                       {doctors[0].certifications.map((cert, index) => (
                         <li key={index}>• {cert}</li>
@@ -343,25 +343,25 @@ const DoctorsPage = () => {
                   </div>
                   
                   <div>
-                    <h4 className="font-bold text-heading mb-3">Contact Information</h4>
-                    <div className="space-y-2 text-sm text-text-paragraph">
+                    <h4 className="font-bold text-gray-900 mb-3">Contact Information</h4>
+                    <div className="space-y-2 text-sm text-gray-600">
                       <div className="flex items-center space-x-2">
-                        <Phone size={16} className="text-primary-from" />
+                        <Phone size={16} className="text-blue-600" />
                         <span>{doctors[0].phone}</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Mail size={16} className="text-accent" />
+                        <Mail size={16} className="text-green-600" />
                         <span>{doctors[0].email}</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Clock size={16} className="text-accent" />
+                        <Clock size={16} className="text-orange-600" />
                         <span>{doctors[0].availability}</span>
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <button className="bg-gradient-to-r from-primary-from to-primary-to text-white px-8 py-4 rounded-full hover:from-primary-to hover:to-primary-from transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105">
+                <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105">
                   Schedule with Dr. {doctors[0].name.split(' ')[1]}
                 </button>
               </div>
@@ -371,7 +371,7 @@ const DoctorsPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-br from-primary-from to-primary-to text-white">
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Meet Your Doctor?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
@@ -379,7 +379,7 @@ const DoctorsPage = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-btn-primary to-btn-hover text-white px-8 py-4 rounded-full hover:from-btn-hover hover:to-btn-primary transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105">
+            <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full hover:from-orange-600 hover:to-red-600 transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105">
               Book Appointment Online
             </button>
             <button className="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold border border-white/30">
