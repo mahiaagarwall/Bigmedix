@@ -1,9 +1,9 @@
 import React from 'react';
-import ImageWithFallback from '../components/ImageWithFallback';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Calendar, User, Clock, ArrowLeft, Share2, Heart, Bookmark } from 'lucide-react';
 
 const BlogPost = () => {
+  const { slug } = useParams();
 
   // This would typically come from an API or CMS
   const post = {
@@ -158,7 +158,7 @@ const BlogPost = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="relative overflow-hidden rounded-3xl shadow-xl">
-              <ImageWithFallback
+              <img
                 src={post.image}
                 alt={post.title}
                 className="w-full h-96 object-cover"
@@ -187,7 +187,7 @@ const BlogPost = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-3xl p-8 shadow-lg">
               <div className="flex items-start space-x-6">
-                <ImageWithFallback
+                <img
                   src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt={post.author}
                   className="w-24 h-24 rounded-full object-cover"
@@ -235,7 +235,7 @@ const BlogPost = () => {
                   className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-2"
                 >
                   <div className="relative overflow-hidden">
-                    <ImageWithFallback
+                    <img
                       src={article.image}
                       alt={article.title}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"

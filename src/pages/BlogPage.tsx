@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import ImageWithFallback from '../components/ImageWithFallback';
 import { Link } from 'react-router-dom';
-import { Calendar, User, ArrowRight, Search, Clock } from 'lucide-react';
+import { Calendar, User, ArrowRight, Search, Tag, Clock } from 'lucide-react';
 
 const BlogPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -165,7 +164,7 @@ const BlogPage = () => {
             <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="relative overflow-hidden">
-                  <ImageWithFallback
+                  <img
                     src={featuredPost.image}
                     alt={featuredPost.title}
                     className="w-full h-96 lg:h-full object-cover hover:scale-105 transition-transform duration-500"
@@ -223,7 +222,7 @@ const BlogPage = () => {
             {regularPosts.map((post) => (
               <article key={post.id} className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:-translate-y-2">
                 <div className="relative overflow-hidden">
-                  <ImageWithFallback
+                  <img
                     src={post.image}
                     alt={post.title}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"

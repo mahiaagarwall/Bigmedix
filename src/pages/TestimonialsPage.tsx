@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Star, Quote, ThumbsUp, Heart, User, Award, Shield } from 'lucide-react';
-import ImageWithFallback from '../components/ImageWithFallback';
+import { Star, Quote, ThumbsUp, Heart, Calendar, User, Award, Shield } from 'lucide-react';
 
 const TestimonialsPage = () => {
   const [visibleItems, setVisibleItems] = useState(new Set());
@@ -257,7 +256,7 @@ const TestimonialsPage = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-4">
                     <div className="relative">
-                    <ImageWithFallback
+                      <img
                         src={testimonial.image}
                         alt={testimonial.name}
                         className="w-14 h-14 rounded-full object-cover border-2 border-blue-200 group-hover:border-blue-300 transition-colors"
@@ -330,7 +329,7 @@ const TestimonialsPage = () => {
             
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative">
-                <ImageWithFallback
+                <img
                   src={testimonials[6].image}
                   alt={testimonials[6].name}
                   className="w-full h-96 object-cover rounded-3xl shadow-xl"
@@ -360,7 +359,7 @@ const TestimonialsPage = () => {
                 </blockquote>
                 
                 <div className="flex items-center space-x-4">
-                  <ImageWithFallback
+                  <img
                     src={testimonials[6].image}
                     alt={testimonials[6].name}
                     className="w-16 h-16 rounded-full object-cover border-2 border-blue-200"

@@ -92,11 +92,11 @@ const Hero = () => {
           <div className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
             <div className="relative z-10">
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                <ImageWithFallback
+                <img
                   src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Diverse medical team providing compassionate patient care"
                   className="w-full h-[700px] object-cover hover:scale-105 transition-transform duration-700"
-                />
+                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
               </div>
               
