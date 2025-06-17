@@ -21,23 +21,17 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
-      </div>
-
+    <section id="contact" className="py-20 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-block mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
+            <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md">
               Get In Touch
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1E4C4C] mb-6 leading-tight">
             Contact Us
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 block">
+            <span className="text-[#F26C45] block">
               Today
             </span>
           </h2>
@@ -49,46 +43,46 @@ const Contact = () => {
         <div className="grid lg:grid-cols-3 gap-12 mb-16">
           {/* Contact Info Cards */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Phone className="text-white" size={28} />
+            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#F26C45]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#F26C45]/20 transition-all duration-300">
+                <Phone className="text-[#F26C45]" size={28} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">Phone</h3>
+              <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4 group-hover:text-[#F26C45] transition-colors">Phone</h3>
               <p className="text-gray-600 mb-4 leading-relaxed">Call us for appointments or emergencies</p>
               <div className="space-y-2">
-                <div className="font-bold text-blue-600 text-lg">+1 (555) 123-4567</div>
+                <div className="font-bold text-[#F26C45] text-lg">+1 (555) 123-4567</div>
                 <div className="text-sm text-gray-500">Emergency: +1 (555) 911-HELP</div>
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Mail className="text-white" size={28} />
+            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#F26C45]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#F26C45]/20 transition-all duration-300">
+                <Mail className="text-[#F26C45]" size={28} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors">Email</h3>
+              <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4 group-hover:text-[#F26C45] transition-colors">Email</h3>
               <p className="text-gray-600 mb-4 leading-relaxed">Send us your questions or concerns</p>
               <div className="space-y-2">
-                <div className="font-bold text-green-600 text-lg">info@bigmedix.com</div>
+                <div className="font-bold text-[#F26C45] text-lg">info@bigmedix.com</div>
                 <div className="text-sm text-gray-500">appointments@bigmedix.com</div>
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <MapPin className="text-white" size={28} />
+            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#F26C45]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#F26C45]/20 transition-all duration-300">
+                <MapPin className="text-[#F26C45]" size={28} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors">Location</h3>
+              <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4 group-hover:text-[#F26C45] transition-colors">Location</h3>
               <p className="text-gray-600 mb-4 leading-relaxed">Visit us at our main medical center</p>
-              <div className="font-bold text-orange-600 text-lg">123 Medical Plaza, Health City, HC 12345</div>
+              <div className="font-bold text-[#F26C45] text-lg">123 Medical Plaza, Health City, HC 12345</div>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
               <div className="flex items-center mb-8">
-                <Calendar className="text-blue-600 mr-4" size={32} />
-                <h3 className="text-3xl font-bold text-gray-900">Book an Appointment</h3>
+                <Calendar className="text-[#F26C45] mr-4" size={32} />
+                <h3 className="text-3xl font-bold text-[#1E4C4C]">Book an Appointment</h3>
               </div>
               
               <form className="space-y-6">
@@ -100,7 +94,7 @@ const Contact = () => {
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 group-hover:border-gray-300"
+                      className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your first name"
                     />
                   </div>
@@ -111,7 +105,7 @@ const Contact = () => {
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 group-hover:border-gray-300"
+                      className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your last name"
                     />
                   </div>
@@ -125,7 +119,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 group-hover:border-gray-300"
+                      className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -136,7 +130,7 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 group-hover:border-gray-300"
+                      className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -150,7 +144,7 @@ const Contact = () => {
                       name="date"
                       value={formData.date}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 group-hover:border-gray-300"
+                      className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                     />
                   </div>
                   <div className="group">
@@ -159,7 +153,7 @@ const Contact = () => {
                       name="department"
                       value={formData.department}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 group-hover:border-gray-300"
+                      className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                     >
                       <option value="">Select Department</option>
                       <option value="cardiology">Cardiology</option>
@@ -180,14 +174,14 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 resize-none group-hover:border-gray-300"
+                    className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 resize-none group-hover:border-gray-300"
                     placeholder="Tell us about your symptoms or concerns..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 rounded-2xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold flex items-center justify-center space-x-3 shadow-xl hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1"
+                  className="w-full bg-[#F26C45] text-white py-4 rounded-xl hover:bg-[#e55a3a] transition-all duration-300 font-bold flex items-center justify-center space-x-3 shadow-md hover:shadow-lg transform hover:scale-105"
                 >
                   <Send size={24} />
                   <span>Book Appointment</span>
@@ -199,7 +193,7 @@ const Contact = () => {
 
         {/* Hours and Additional Info */}
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-8 text-white shadow-xl">
+          <div className="bg-[#1E4C4C] rounded-2xl p-8 text-white shadow-md">
             <div className="flex items-center mb-6">
               <Clock className="mr-4" size={32} />
               <h3 className="text-2xl font-bold">Working Hours</h3>
@@ -217,13 +211,13 @@ const Contact = () => {
                 <span>Sunday</span>
                 <span className="font-bold">Emergency Only</span>
               </div>
-              <div className="pt-4 border-t border-blue-400">
-                <span className="font-bold text-orange-300">24/7 Emergency Care Available</span>
+              <div className="pt-4 border-t border-gray-400">
+                <span className="font-bold text-[#F26C45]">24/7 Emergency Care Available</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-3xl p-8 text-white shadow-xl">
+          <div className="bg-[#F26C45] rounded-2xl p-8 text-white shadow-md">
             <div className="flex items-center mb-6">
               <MessageCircle className="mr-4" size={32} />
               <h3 className="text-2xl font-bold">Quick Response</h3>
@@ -244,22 +238,22 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl p-8 text-white shadow-xl">
+          <div className="bg-[#1E4C4C] rounded-2xl p-8 text-white shadow-md">
             <div className="flex items-center mb-6">
               <Award className="mr-4" size={32} />
               <h3 className="text-2xl font-bold">Why Choose Us</h3>
             </div>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <div className="w-3 h-3 bg-[#F26C45] rounded-full"></div>
                 <span>Board-certified physicians</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <div className="w-3 h-3 bg-[#F26C45] rounded-full"></div>
                 <span>State-of-the-art facilities</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
+                <div className="w-3 h-3 bg-[#F26C45] rounded-full"></div>
                 <span>Personalized care plans</span>
               </div>
             </div>

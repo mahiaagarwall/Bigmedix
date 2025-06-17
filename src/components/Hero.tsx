@@ -10,45 +10,50 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 overflow-hidden">
-      {/* Background Pattern */}
+    <section id="home" className="relative min-h-screen bg-gradient-to-br from-[#f8f6f3] to-[#faf9f7] overflow-hidden pt-20">
+      {/* Hexagon Pattern Background */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full animate-float"></div>
-        <div className="absolute top-40 right-32 w-24 h-24 bg-blue-300 rounded-full animate-float-delayed"></div>
-        <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-blue-200 rounded-full animate-float-slow"></div>
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="hexagons" x="0" y="0" width="20" height="17.32" patternUnits="userSpaceOnUse">
+              <polygon points="10,1 18.66,6 18.66,16 10,21 1.34,16 1.34,6" fill="none" stroke="#1E4C4C" strokeWidth="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hexagons)" />
+        </svg>
       </div>
 
-      <div className="container mx-auto px-4 pt-32 pb-20">
+      <div className="container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
             <div className="space-y-6">
               <div className="inline-block">
-                <span className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full text-sm font-semibold animate-pulse">
-                  #1 Medical Center in the City
+                <span className="bg-white text-[#1E4C4C] px-6 py-3 rounded-full text-sm font-semibold shadow-md">
+                  The Best Health Care Services
                 </span>
               </div>
               
-              <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
+              <h1 className="text-5xl lg:text-6xl font-bold text-[#1E4C4C] leading-tight">
                 Your Health is Our
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 block animate-gradient">
+                <span className="text-[#F26C45] block">
                   Top Priority
                 </span>
               </h1>
               
-              <p className="text-xl text-blue-100 leading-relaxed max-w-lg">
+              <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
                 Experience world-class healthcare with our team of expert medical professionals. We provide comprehensive medical services with cutting-edge technology and compassionate care.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6">
-              <button className="group bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full hover:from-orange-600 hover:to-red-600 transition-all duration-300 font-semibold flex items-center justify-center space-x-3 shadow-2xl hover:shadow-orange-500/25 transform hover:scale-105 hover:-translate-y-1">
+              <button className="group bg-[#F26C45] text-white px-8 py-4 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl transform hover:scale-105">
                 <span>Book Appointment</span>
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform"  />
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
               
-              <button className="group flex items-center space-x-3 text-white hover:text-orange-300 transition-all duration-300 font-semibold">
-                <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 group-hover:scale-110">
-                  <Play size={20} className="ml-1"  />
+              <button className="group flex items-center space-x-3 text-[#1E4C4C] hover:text-[#F26C45] transition-all duration-300 font-semibold">
+                <div className="w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white transition-all duration-300 group-hover:scale-110 shadow-md">
+                  <Play size={20} className="ml-1" />
                 </div>
                 <span>Watch Our Story</span>
               </button>
@@ -56,79 +61,54 @@ const Hero = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
               <div className="text-center group cursor-pointer">
-                <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
-                  <Shield className="text-orange-400" size={32}  />
+                <div className="w-16 h-16 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300 group-hover:scale-110 shadow-md">
+                  <Shield className="text-[#F26C45]" size={32} />
                 </div>
-                <div className="text-3xl font-bold text-white group-hover:text-orange-300 transition-colors">24/7</div>
-                <div className="text-blue-200 text-sm">Emergency Care</div>
+                <div className="text-3xl font-bold text-[#1E4C4C] group-hover:text-[#F26C45] transition-colors">24/7</div>
+                <div className="text-gray-600 text-sm">Emergency Care</div>
               </div>
               
               <div className="text-center group cursor-pointer">
-                <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
-                  <Award className="text-orange-400" size={32}  />
+                <div className="w-16 h-16 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300 group-hover:scale-110 shadow-md">
+                  <Award className="text-[#F26C45]" size={32} />
                 </div>
-                <div className="text-3xl font-bold text-white group-hover:text-orange-300 transition-colors">25+</div>
-                <div className="text-blue-200 text-sm">Years Experience</div>
+                <div className="text-3xl font-bold text-[#1E4C4C] group-hover:text-[#F26C45] transition-colors">25+</div>
+                <div className="text-gray-600 text-sm">Years Experience</div>
               </div>
               
               <div className="text-center group cursor-pointer">
-                <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
-                  <Users className="text-orange-400" size={32}  />
+                <div className="w-16 h-16 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300 group-hover:scale-110 shadow-md">
+                  <Users className="text-[#F26C45]" size={32} />
                 </div>
-                <div className="text-3xl font-bold text-white group-hover:text-orange-300 transition-colors">50+</div>
-                <div className="text-blue-200 text-sm">Expert Doctors</div>
+                <div className="text-3xl font-bold text-[#1E4C4C] group-hover:text-[#F26C45] transition-colors">50+</div>
+                <div className="text-gray-600 text-sm">Expert Doctors</div>
               </div>
               
               <div className="text-center group cursor-pointer">
-                <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
-                  <Clock className="text-orange-400" size={32}  />
+                <div className="w-16 h-16 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white transition-all duration-300 group-hover:scale-110 shadow-md">
+                  <Clock className="text-[#F26C45]" size={32} />
                 </div>
-                <div className="text-3xl font-bold text-white group-hover:text-orange-300 transition-colors">15K+</div>
-                <div className="text-blue-200 text-sm">Happy Patients</div>
+                <div className="text-3xl font-bold text-[#1E4C4C] group-hover:text-[#F26C45] transition-colors">15K+</div>
+                <div className="text-gray-600 text-sm">Happy Patients</div>
               </div>
             </div>
           </div>
 
           <div className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
             <div className="relative z-10">
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+              <div className="relative overflow-hidden rounded-3xl shadow-xl">
                 <img
                   src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Diverse medical team providing compassionate patient care"
-                  className="w-full h-[700px] object-cover hover:scale-105 transition-transform duration-700"
-                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
-              </div>
-              
-              {/* Floating Cards */}
-              <div className="absolute -top-8 -left-8 bg-white rounded-2xl p-6 shadow-2xl animate-float">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <div className="w-6 h-6 bg-green-500 rounded-full animate-pulse"></div>
-                  </div>
-                  <div>
-                    <div className="font-bold text-gray-800">24/7 Available</div>
-                    <div className="text-sm text-gray-600">Emergency Services</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="absolute -bottom-8 -right-8 bg-white rounded-2xl p-6 shadow-2xl animate-float-delayed">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Award className="text-blue-600" size={24}  />
-                  </div>
-                  <div>
-                    <div className="font-bold text-gray-800">Award Winning</div>
-                    <div className="text-sm text-gray-600">Healthcare Excellence</div>
-                  </div>
-                </div>
+                  alt="Professional healthcare team providing compassionate patient care"
+                  className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1E4C4C]/10 to-transparent"></div>
               </div>
             </div>
             
             {/* Background Decorations */}
-            <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-br from-orange-400 to-red-500 rounded-3xl -z-10 opacity-20"></div>
-            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full -z-20 animate-pulse"></div>
+            <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-br from-[#F26C45]/20 to-[#e55a3a]/20 rounded-3xl -z-10"></div>
+            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-br from-[#1E4C4C]/20 to-[#1E4C4C]/30 rounded-full -z-20"></div>
           </div>
         </div>
       </div>

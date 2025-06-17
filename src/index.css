@@ -74,10 +74,17 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
+  background: linear-gradient(to bottom, #F26C45, #e55a3a);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #1d4ed8, #1e40af);
+  background: linear-gradient(to bottom, #e55a3a, #d14d2f);
+}
+
+/* Color palette variables */
+:root {
+  --primary-orange: #F26C45;
+  --primary-teal: #1E4C4C;
+  --hover-orange: #e55a3a;
 }

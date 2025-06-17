@@ -51,30 +51,27 @@ const About = () => {
   };
 
   const stats = [
-    { icon: Award, number: `${counters.years}+`, label: 'Years Experience', color: 'from-blue-500 to-blue-600' },
-    { icon: Users, number: `${counters.doctors}+`, label: 'Expert Doctors', color: 'from-green-500 to-green-600' },
-    { icon: Clock, number: `${counters.patients.toLocaleString()}+`, label: 'Happy Patients', color: 'from-orange-500 to-orange-600' },
-    { icon: MapPin, number: `${counters.locations}`, label: 'Locations', color: 'from-purple-500 to-purple-600' }
+    { icon: Award, number: `${counters.years}+`, label: 'Years Experience', color: 'text-[#F26C45]' },
+    { icon: Users, number: `${counters.doctors}+`, label: 'Expert Doctors', color: 'text-[#F26C45]' },
+    { icon: Clock, number: `${counters.patients.toLocaleString()}+`, label: 'Happy Patients', color: 'text-[#F26C45]' },
+    { icon: MapPin, number: `${counters.locations}`, label: 'Locations', color: 'text-[#F26C45]' }
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 bg-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-50 to-transparent"></div>
-      
+    <section id="about" ref={sectionRef} className="py-20 bg-gray-50 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
             <div className="space-y-6">
               <div className="inline-block">
-                <span className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
+                <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md">
                   About BigMedix
                 </span>
               </div>
               
-              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#1E4C4C] leading-tight">
                 Trusted Healthcare
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 block">
+                <span className="text-[#F26C45] block">
                   Since 1998
                 </span>
               </h2>
@@ -100,11 +97,11 @@ const About = () => {
                 }
               ].map((item, index) => (
                 <div key={index} className="flex items-start space-x-4 group">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
-                    <CheckCircle className="text-white" size={16}     />
+                  <div className="w-6 h-6 bg-[#F26C45] rounded-full flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
+                    <CheckCircle className="text-white" size={14} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2 text-lg group-hover:text-blue-600 transition-colors">
+                    <h4 className="font-bold text-[#1E4C4C] mb-2 text-lg group-hover:text-[#F26C45] transition-colors">
                       {item.title}
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -116,13 +113,13 @@ const About = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1">
+              <button className="bg-[#F26C45] text-white px-8 py-4 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-md hover:shadow-lg transform hover:scale-105">
                 Learn More About Us
               </button>
               
-              <button className="group flex items-center space-x-3 text-blue-600 hover:text-orange-500 transition-all duration-300 font-semibold px-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-orange-100 transition-all duration-300 group-hover:scale-110">
-                  <Play size={20} className="ml-1"     />
+              <button className="group flex items-center space-x-3 text-[#1E4C4C] hover:text-[#F26C45] transition-all duration-300 font-semibold px-4">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-[#F26C45]/10 transition-all duration-300 group-hover:scale-110 shadow-md">
+                  <Play size={20} className="ml-1" />
                 </div>
                 <span>Watch Our Story</span>
               </button>
@@ -132,39 +129,35 @@ const About = () => {
           <div className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6">
-                <div className="relative overflow-hidden rounded-3xl shadow-xl group">
+                <div className="relative overflow-hidden rounded-2xl shadow-md group">
                   <img
                     src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Diverse medical team collaborating on patient care"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
+                  />
                 </div>
-                <div className="relative overflow-hidden rounded-3xl shadow-xl group">
+                <div className="relative overflow-hidden rounded-2xl shadow-md group">
                   <img
                     src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Modern medical facility with advanced equipment"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
+                  />
                 </div>
               </div>
               <div className="space-y-6 pt-12">
-                <div className="relative overflow-hidden rounded-3xl shadow-xl group">
+                <div className="relative overflow-hidden rounded-2xl shadow-md group">
                   <img
                     src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Healthcare professional providing compassionate patient care"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
+                  />
                 </div>
-                <div className="relative overflow-hidden rounded-3xl shadow-xl group">
+                <div className="relative overflow-hidden rounded-2xl shadow-md group">
                   <img
                     src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="State-of-the-art medical equipment and technology"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
+                  />
                 </div>
               </div>
             </div>
@@ -180,10 +173,10 @@ const About = () => {
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className={`w-20 h-20 bg-gradient-to-br ${stat.color} rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
-                <stat.icon className="text-white" size={36}     />
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300 shadow-md">
+                <stat.icon className={stat.color} size={32} />
               </div>
-              <div className="text-4xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+              <div className="text-4xl font-bold text-[#1E4C4C] mb-2 group-hover:text-[#F26C45] transition-colors">
                 {stat.number}
               </div>
               <div className="text-gray-600 font-medium">{stat.label}</div>
