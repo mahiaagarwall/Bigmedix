@@ -65,9 +65,9 @@ const Header = () => {
             <Link 
               to="/" 
               className={`font-semibold transition-all duration-300 hover:scale-105 ${
-                isActive('/') 
-                  ? (isScrolled ? 'text-blue-600' : 'text-orange-300') 
-                  : (isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200')
+                isActive('/')
+                  ? (isScrolled ? 'text-accent font-bold' : 'text-white font-bold')
+                  : (isScrolled ? 'text-text-paragraph hover:text-primary-from' : 'text-white hover:text-primary-from')
               }`}
             >
               Home
@@ -75,9 +75,9 @@ const Header = () => {
             <Link 
               to="/about" 
               className={`font-semibold transition-all duration-300 hover:scale-105 ${
-                isActive('/about') 
-                  ? (isScrolled ? 'text-blue-600' : 'text-orange-300') 
-                  : (isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200')
+                isActive('/about')
+                  ? (isScrolled ? 'text-accent font-bold' : 'text-white font-bold')
+                  : (isScrolled ? 'text-text-paragraph hover:text-primary-from' : 'text-white hover:text-primary-from')
               }`}
             >
               About Us
@@ -86,9 +86,9 @@ const Header = () => {
             <div className="relative group">
               <button 
                 className={`flex items-center space-x-1 font-semibold transition-all duration-300 hover:scale-105 ${
-                  isActive('/services') 
-                    ? (isScrolled ? 'text-blue-600' : 'text-orange-300') 
-                    : (isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200')
+                  isActive('/services')
+                    ? (isScrolled ? 'text-accent font-bold' : 'text-white font-bold')
+                    : (isScrolled ? 'text-text-paragraph hover:text-primary-from' : 'text-white hover:text-primary-from')
                 }`}
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
@@ -103,13 +103,13 @@ const Header = () => {
                   onMouseEnter={() => setIsServicesOpen(true)}
                   onMouseLeave={() => setIsServicesOpen(false)}
                 >
-                  <Link to="/services" className="block px-6 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+                  <Link to="/services" className="block px-6 py-3 text-text-paragraph hover:text-primary-from hover:bg-primary-from/5 transition-colors">
                     All Services
                   </Link>
-                  <Link to="/patient-resources" className="block px-6 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+                  <Link to="/patient-resources" className="block px-6 py-3 text-text-paragraph hover:text-primary-from hover:bg-primary-from/5 transition-colors">
                     Patient Resources
                   </Link>
-                  <Link to="/insurance" className="block px-6 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+                  <Link to="/insurance" className="block px-6 py-3 text-text-paragraph hover:text-primary-from hover:bg-primary-from/5 transition-colors">
                     Insurance & Payment
                   </Link>
                 </div>
@@ -119,9 +119,9 @@ const Header = () => {
             <Link 
               to="/doctors" 
               className={`font-semibold transition-all duration-300 hover:scale-105 ${
-                isActive('/doctors') 
-                  ? (isScrolled ? 'text-blue-600' : 'text-orange-300') 
-                  : (isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200')
+                isActive('/doctors')
+                  ? (isScrolled ? 'text-accent font-bold' : 'text-white font-bold')
+                  : (isScrolled ? 'text-text-paragraph hover:text-primary-from' : 'text-white hover:text-primary-from')
               }`}
             >
               Doctors
@@ -129,9 +129,9 @@ const Header = () => {
             <Link 
               to="/blog" 
               className={`font-semibold transition-all duration-300 hover:scale-105 ${
-                isActive('/blog') 
-                  ? (isScrolled ? 'text-blue-600' : 'text-orange-300') 
-                  : (isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200')
+                isActive('/blog')
+                  ? (isScrolled ? 'text-accent font-bold' : 'text-white font-bold')
+                  : (isScrolled ? 'text-text-paragraph hover:text-primary-from' : 'text-white hover:text-primary-from')
               }`}
             >
               Blog
@@ -139,9 +139,9 @@ const Header = () => {
             <Link 
               to="/contact" 
               className={`font-semibold transition-all duration-300 hover:scale-105 ${
-                isActive('/contact') 
-                  ? (isScrolled ? 'text-blue-600' : 'text-orange-300') 
-                  : (isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200')
+                isActive('/contact')
+                  ? (isScrolled ? 'text-accent font-bold' : 'text-white font-bold')
+                  : (isScrolled ? 'text-text-paragraph hover:text-primary-from' : 'text-white hover:text-primary-from')
               }`}
             >
               Contact
@@ -165,18 +165,18 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 py-4 border-t border-gray-200 bg-white rounded-lg shadow-xl animate-fadeIn">
+          <div className="lg:hidden mt-4 py-4 border-t border-card-bg-alt bg-card-bg rounded-lg shadow-xl animate-fadeIn">
             <div className="flex flex-col space-y-4 px-4">
-              <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 hover:bg-blue-50 px-4 rounded-lg">Home</Link>
-              <Link to="/about" className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 hover:bg-blue-50 px-4 rounded-lg">About Us</Link>
-              <Link to="/services" className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 hover:bg-blue-50 px-4 rounded-lg">Services</Link>
-              <Link to="/doctors" className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 hover:bg-blue-50 px-4 rounded-lg">Doctors</Link>
-              <Link to="/blog" className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 hover:bg-blue-50 px-4 rounded-lg">Blog</Link>
-              <Link to="/patient-resources" className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 hover:bg-blue-50 px-4 rounded-lg">Patient Resources</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 hover:bg-blue-50 px-4 rounded-lg">Contact</Link>
-              <Link 
+              <Link to="/" className="text-text-paragraph hover:text-primary-from transition-colors font-medium py-2 hover:bg-primary-from/5 px-4 rounded-lg">Home</Link>
+              <Link to="/about" className="text-text-paragraph hover:text-primary-from transition-colors font-medium py-2 hover:bg-primary-from/5 px-4 rounded-lg">About Us</Link>
+              <Link to="/services" className="text-text-paragraph hover:text-primary-from transition-colors font-medium py-2 hover:bg-primary-from/5 px-4 rounded-lg">Services</Link>
+              <Link to="/doctors" className="text-text-paragraph hover:text-primary-from transition-colors font-medium py-2 hover:bg-primary-from/5 px-4 rounded-lg">Doctors</Link>
+              <Link to="/blog" className="text-text-paragraph hover:text-primary-from transition-colors font-medium py-2 hover:bg-primary-from/5 px-4 rounded-lg">Blog</Link>
+              <Link to="/patient-resources" className="text-text-paragraph hover:text-primary-from transition-colors font-medium py-2 hover:bg-primary-from/5 px-4 rounded-lg">Patient Resources</Link>
+              <Link to="/contact" className="text-text-paragraph hover:text-primary-from transition-colors font-medium py-2 hover:bg-primary-from/5 px-4 rounded-lg">Contact</Link>
+              <Link
                 to="/contact"
-                className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full hover:from-orange-600 hover:to-red-600 transition-all duration-300 font-medium w-fit transform hover:scale-105"
+                className="bg-gradient-to-r from-btn-primary to-btn-hover text-white px-6 py-3 rounded-full hover:from-btn-hover hover:to-btn-primary transition-all duration-300 font-medium w-fit transform hover:scale-105"
               >
                 Book Appointment
               </Link>

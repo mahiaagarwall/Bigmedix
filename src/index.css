@@ -70,14 +70,14 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #F1F1F1; /* card-alt */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
+  background: linear-gradient(to bottom, #0F4537, #2E6656);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #1d4ed8, #1e40af);
+  background: linear-gradient(to bottom, #2E6656, #0F4537);
 }
