@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -16,6 +16,17 @@ import FAQ from './pages/FAQ';
 import Careers from './pages/Careers';
 
 function App() {
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/hello")
+      .then((res) => res.json())
+      .then((data) => {
+        setMessage(data.message); // "Hello from the Flask backend!"
+      })
+      .catch((err) => console.error("Error fetching from Flask:", err));
+  }, []);
+
   return (
     <Router>
       <div className="min-h-screen">

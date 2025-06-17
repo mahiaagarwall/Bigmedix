@@ -19,6 +19,36 @@ const ContactPage = () => {
       [e.target.name]: e.target.value
     });
   };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch('http://localhost:5000/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+    alert(result.message);
+
+    // Reset form fields
+  setFormData({
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  date: '',
+  department: '',
+  message: '',
+  contactMethod: 'email'
+});
+
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    alert('Failed to submit form. Please try again.');
+  }
+};
 
   const locations = [
     {
@@ -150,7 +180,7 @@ const ContactPage = () => {
                 <h2 className="text-3xl font-bold text-gray-900">Send us a Message</h2>
               </div>
               
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="group">
                     <label className="block text-sm font-bold text-gray-700 mb-3">First Name *</label>
