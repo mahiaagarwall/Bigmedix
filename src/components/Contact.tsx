@@ -1,6 +1,5 @@
-import ImageWithFallback from './ImageWithFallback';
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Calendar, Send, MessageCircle, Users, Award } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Calendar, Send, MessageCircle, Users, Award, ArrowRight } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,9 +22,9 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fadeIn">
           <div className="inline-block mb-6">
-            <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md">
+            <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
               Get In Touch
             </span>
           </div>
@@ -43,7 +42,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-3 gap-12 mb-16">
           {/* Contact Info Cards */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group card-hover">
               <div className="w-16 h-16 bg-[#F26C45]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#F26C45]/20 transition-all duration-300">
                 <Phone className="text-[#F26C45]" size={28} />
               </div>
@@ -55,7 +54,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group card-hover">
               <div className="w-16 h-16 bg-[#F26C45]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#F26C45]/20 transition-all duration-300">
                 <Mail className="text-[#F26C45]" size={28} />
               </div>
@@ -67,7 +66,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group card-hover">
               <div className="w-16 h-16 bg-[#F26C45]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#F26C45]/20 transition-all duration-300">
                 <MapPin className="text-[#F26C45]" size={28} />
               </div>
@@ -79,7 +78,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
               <div className="flex items-center mb-8">
                 <Calendar className="text-[#F26C45] mr-4" size={32} />
                 <h3 className="text-3xl font-bold text-[#1E4C4C]">Book an Appointment</h3>
@@ -181,10 +180,11 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#F26C45] text-white py-4 rounded-xl hover:bg-[#e55a3a] transition-all duration-300 font-bold flex items-center justify-center space-x-3 shadow-md hover:shadow-lg transform hover:scale-105"
+                  className="w-full btn-animate bg-[#F26C45] text-white py-4 rounded-xl hover:bg-[#e55a3a] transition-all duration-300 font-bold flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   <Send size={24} />
                   <span>Book Appointment</span>
+                  <ArrowRight size={20} />
                 </button>
               </form>
             </div>
@@ -193,7 +193,7 @@ const Contact = () => {
 
         {/* Hours and Additional Info */}
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-[#1E4C4C] rounded-2xl p-8 text-white shadow-md">
+          <div className="bg-[#1E4C4C] rounded-2xl p-8 text-white shadow-lg card-hover">
             <div className="flex items-center mb-6">
               <Clock className="mr-4" size={32} />
               <h3 className="text-2xl font-bold">Working Hours</h3>
@@ -217,7 +217,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="bg-[#F26C45] rounded-2xl p-8 text-white shadow-md">
+          <div className="bg-[#F26C45] rounded-2xl p-8 text-white shadow-lg card-hover">
             <div className="flex items-center mb-6">
               <MessageCircle className="mr-4" size={32} />
               <h3 className="text-2xl font-bold">Quick Response</h3>
@@ -238,7 +238,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="bg-[#1E4C4C] rounded-2xl p-8 text-white shadow-md">
+          <div className="bg-[#1E4C4C] rounded-2xl p-8 text-white shadow-lg card-hover">
             <div className="flex items-center mb-6">
               <Award className="mr-4" size={32} />
               <h3 className="text-2xl font-bold">Why Choose Us</h3>

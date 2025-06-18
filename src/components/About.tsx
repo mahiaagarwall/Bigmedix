@@ -1,4 +1,3 @@
-import ImageWithFallback from './ImageWithFallback';
 import React, { useEffect, useRef, useState } from 'react';
 import { Award, Users, Clock, MapPin, CheckCircle, Play } from 'lucide-react';
 
@@ -59,12 +58,15 @@ const About = () => {
 
   return (
     <section id="about" ref={sectionRef} className="py-20 bg-[#F4F8F6] relative overflow-hidden">
-      <div className="container mx-auto px-4">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
             <div className="space-y-6">
               <div className="inline-block">
-                <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md">
+                <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
                   About BigMedix
                 </span>
               </div>
@@ -113,7 +115,7 @@ const About = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#F26C45] text-white px-8 py-4 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-md hover:shadow-lg transform hover:scale-105">
+              <button className="btn-animate bg-[#F26C45] text-white px-8 py-4 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
                 Learn More About Us
               </button>
               
@@ -129,14 +131,14 @@ const About = () => {
           <div className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6">
-                <div className="relative overflow-hidden rounded-2xl shadow-md group">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg group">
                   <img
                     src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Diverse medical team collaborating on patient care"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-                <div className="relative overflow-hidden rounded-2xl shadow-md group">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg group">
                   <img
                     src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Modern medical facility with advanced equipment"
@@ -145,14 +147,14 @@ const About = () => {
                 </div>
               </div>
               <div className="space-y-6 pt-12">
-                <div className="relative overflow-hidden rounded-2xl shadow-md group">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg group">
                   <img
                     src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Healthcare professional providing compassionate patient care"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-                <div className="relative overflow-hidden rounded-2xl shadow-md group">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg group">
                   <img
                     src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="State-of-the-art medical equipment and technology"
@@ -168,12 +170,12 @@ const About = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`text-center group cursor-pointer transform transition-all duration-500 hover:-translate-y-2 ${
+              className={`text-center group cursor-pointer transform transition-all duration-500 card-hover ${
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300 shadow-md">
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300 shadow-lg">
                 <stat.icon className={stat.color} size={32} />
               </div>
               <div className="text-4xl font-bold text-[#1E4C4C] mb-2 group-hover:text-[#F26C45] transition-colors">

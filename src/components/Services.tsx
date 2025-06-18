@@ -1,6 +1,5 @@
-import ImageWithFallback from './ImageWithFallback';
 import React, { useEffect, useRef, useState } from 'react';
-import { Heart, Brain, Eye, Bone, Baby, Stethoscope, Activity, Shield, ArrowRight } from 'lucide-react';
+import { Heart, Brain, Eye, Bone, Baby, Stethoscope, Activity, Shield, ArrowRight, Plus } from 'lucide-react';
 
 const Services = () => {
   const [visibleItems, setVisibleItems] = useState(new Set());
@@ -30,65 +29,68 @@ const Services = () => {
       title: 'Cardiology',
       description: 'Comprehensive heart care with advanced diagnostic and treatment options for all cardiovascular conditions.',
       features: ['ECG & Echocardiography', 'Cardiac Surgery', 'Heart Disease Prevention'],
-      color: 'text-[#F26C45]'
+      color: 'from-red-500 to-pink-500'
     },
     {
       icon: Brain,
       title: 'Neurology',
       description: 'Expert neurological care for brain, spine, and nervous system disorders with cutting-edge technology.',
       features: ['MRI & CT Imaging', 'Stroke Treatment', 'Memory Disorders'],
-      color: 'text-[#F26C45]'
+      color: 'from-purple-500 to-indigo-500'
     },
     {
       icon: Eye,
       title: 'Ophthalmology',
       description: 'Complete eye care services from routine exams to complex surgical procedures for optimal vision health.',
       features: ['LASIK Surgery', 'Cataract Treatment', 'Retinal Disorders'],
-      color: 'text-[#F26C45]'
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Bone,
       title: 'Orthopedics',
       description: 'Advanced bone, joint, and muscle care with minimally invasive surgical techniques and rehabilitation.',
       features: ['Joint Replacement', 'Sports Medicine', 'Fracture Treatment'],
-      color: 'text-[#F26C45]'
+      color: 'from-green-500 to-emerald-500'
     },
     {
       icon: Baby,
       title: 'Pediatrics',
       description: 'Specialized healthcare for infants, children, and adolescents in a child-friendly environment.',
       features: ['Well-Child Visits', 'Immunizations', 'Growth Monitoring'],
-      color: 'text-[#F26C45]'
+      color: 'from-yellow-500 to-orange-500'
     },
     {
       icon: Stethoscope,
       title: 'Internal Medicine',
       description: 'Comprehensive adult healthcare focusing on prevention, diagnosis, and treatment of internal diseases.',
       features: ['Annual Check-ups', 'Chronic Disease Management', 'Health Screenings'],
-      color: 'text-[#F26C45]'
+      color: 'from-teal-500 to-blue-500'
     },
     {
       icon: Activity,
       title: 'Emergency Care',
       description: '24/7 emergency medical services with rapid response times and state-of-the-art trauma care.',
       features: ['Trauma Center', 'Critical Care Unit', 'Ambulance Services'],
-      color: 'text-[#F26C45]'
+      color: 'from-red-500 to-orange-500'
     },
     {
       icon: Shield,
       title: 'Preventive Care',
       description: 'Proactive healthcare programs designed to prevent illness and maintain optimal health and wellness.',
       features: ['Health Screenings', 'Wellness Programs', 'Lifestyle Counseling'],
-      color: 'text-[#F26C45]'
+      color: 'from-indigo-500 to-purple-500'
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-white relative overflow-hidden">
+    <section id="services" className="py-20 bg-[#F4F8F6] relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
+      
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fadeIn">
           <div className="inline-block mb-6">
-            <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md">
+            <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
               Our Medical Services
             </span>
           </div>
@@ -109,15 +111,15 @@ const Services = () => {
               key={index}
               data-index={index}
               data-animate="service"
-              className={`group bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-500 border border-gray-100 cursor-pointer transform hover:-translate-y-2 ${
+              className={`group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 cursor-pointer card-hover ${
                 visibleItems.has(index.toString()) 
                   ? 'translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="w-16 h-16 bg-[#F26C45]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#F26C45]/20 transition-all duration-300">
-                <service.icon className={service.color} size={32} />
+              <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
+                <service.icon className="text-white" size={32} />
               </div>
               
               <h3 className="text-xl font-bold text-[#1E4C4C] mb-4 group-hover:text-[#F26C45] transition-colors">
@@ -145,10 +147,26 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <button className="bg-[#F26C45] text-white px-10 py-4 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-md hover:shadow-lg transform hover:scale-105">
-            View All Services
-          </button>
+        {/* See All Services Card */}
+        <div className="mt-8 flex justify-center">
+          <div className="group bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer card-hover text-center text-white max-w-sm">
+            <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-all duration-300">
+              <Plus className="text-white" size={32} />
+            </div>
+            
+            <h3 className="text-xl font-bold mb-4">
+              View All Services
+            </h3>
+            
+            <p className="text-white/90 mb-6 leading-relaxed text-sm">
+              Explore our complete range of medical specialties and healthcare services.
+            </p>
+
+            <button className="flex items-center space-x-2 text-white font-semibold mx-auto group-hover:translate-x-1 transition-transform text-sm">
+              <span>See All Services</span>
+              <ArrowRight size={14} />
+            </button>
+          </div>
         </div>
       </div>
     </section>

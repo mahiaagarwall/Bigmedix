@@ -1,4 +1,3 @@
-import ImageWithFallback from './ImageWithFallback';
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -12,7 +11,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -21,12 +20,16 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-2' : 'bg-white py-3'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-white/95 backdrop-blur-md shadow-lg py-2' 
+        : 'bg-white/90 backdrop-blur-sm py-3'
+    }`}>
       {/* Main Navigation */}
       <nav className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3 group cursor-pointer">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+            <div className="w-10 h-10 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105 animate-pulse-glow">
               <span className="text-white font-bold text-xl">+</span>
             </div>
             <div>
@@ -40,30 +43,28 @@ const Header = () => {
           <div className="hidden lg:flex items-center space-x-8">
             <Link 
               to="/" 
-              className={`font-medium transition-all duration-300 hover:text-[#F26C45] relative group ${
+              className={`nav-link font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
                 isActive('/') 
                   ? 'text-[#F26C45]' 
                   : 'text-[#1E4C4C]'
               }`}
             >
               Home
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#F26C45] transition-all duration-300 group-hover:w-full ${isActive('/') ? 'w-full' : ''}`}></span>
             </Link>
             <Link 
               to="/about" 
-              className={`font-medium transition-all duration-300 hover:text-[#F26C45] relative group ${
+              className={`nav-link font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
                 isActive('/about') 
                   ? 'text-[#F26C45]' 
                   : 'text-[#1E4C4C]'
               }`}
             >
               About Us
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#F26C45] transition-all duration-300 group-hover:w-full ${isActive('/about') ? 'w-full' : ''}`}></span>
             </Link>
             
             <div className="relative group">
               <button 
-                className={`flex items-center space-x-1 font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
+                className={`nav-link flex items-center space-x-1 font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
                   isActive('/services') 
                     ? 'text-[#F26C45]' 
                     : 'text-[#1E4C4C]'
@@ -73,23 +74,22 @@ const Header = () => {
               >
                 <span>Services</span>
                 <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300" />
-                <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#F26C45] transition-all duration-300 group-hover:w-full ${isActive('/services') ? 'w-full' : ''}`}></span>
               </button>
               
               <div 
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-100 py-4 z-50 transition-all duration-300 ${
+                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-4 z-50 transition-all duration-300 ${
                   isServicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
                 }`}
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onMouseLeave={() => setIsServicesOpen(false)}
               >
-                <Link to="/services" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-gray-50 transition-colors">
+                <Link to="/services" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
                   All Services
                 </Link>
-                <Link to="/patient-resources" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-gray-50 transition-colors">
+                <Link to="/patient-resources" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
                   Patient Resources
                 </Link>
-                <Link to="/insurance" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-gray-50 transition-colors">
+                <Link to="/insurance" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
                   Insurance & Payment
                 </Link>
               </div>
@@ -97,19 +97,18 @@ const Header = () => {
             
             <Link 
               to="/doctors" 
-              className={`font-medium transition-all duration-300 hover:text-[#F26C45] relative group ${
+              className={`nav-link font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
                 isActive('/doctors') 
                   ? 'text-[#F26C45]' 
                   : 'text-[#1E4C4C]'
               }`}
             >
               Doctors
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#F26C45] transition-all duration-300 group-hover:w-full ${isActive('/doctors') ? 'w-full' : ''}`}></span>
             </Link>
 
             <div className="relative group">
               <button 
-                className={`flex items-center space-x-1 font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
+                className={`nav-link flex items-center space-x-1 font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
                   ['/blog', '/testimonials', '/faq', '/careers'].some(path => isActive(path))
                     ? 'text-[#F26C45]' 
                     : 'text-[#1E4C4C]'
@@ -119,26 +118,25 @@ const Header = () => {
               >
                 <span>Pages</span>
                 <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300" />
-                <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#F26C45] transition-all duration-300 group-hover:w-full ${['/blog', '/testimonials', '/faq', '/careers'].some(path => isActive(path)) ? 'w-full' : ''}`}></span>
               </button>
               
               <div 
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-100 py-4 z-50 transition-all duration-300 ${
+                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-4 z-50 transition-all duration-300 ${
                   isPagesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
                 }`}
                 onMouseEnter={() => setIsPagesOpen(true)}
                 onMouseLeave={() => setIsPagesOpen(false)}
               >
-                <Link to="/blog" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-gray-50 transition-colors">
+                <Link to="/blog" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
                   Blog
                 </Link>
-                <Link to="/testimonials" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-gray-50 transition-colors">
+                <Link to="/testimonials" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
                   Testimonials
                 </Link>
-                <Link to="/faq" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-gray-50 transition-colors">
+                <Link to="/faq" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
                   FAQ
                 </Link>
-                <Link to="/careers" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-gray-50 transition-colors">
+                <Link to="/careers" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
                   Careers
                 </Link>
               </div>
@@ -146,14 +144,13 @@ const Header = () => {
             
             <Link 
               to="/contact" 
-              className={`font-medium transition-all duration-300 hover:text-[#F26C45] relative group ${
+              className={`nav-link font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
                 isActive('/contact') 
                   ? 'text-[#F26C45]' 
                   : 'text-[#1E4C4C]'
               }`}
             >
               Contact
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#F26C45] transition-all duration-300 group-hover:w-full ${isActive('/contact') ? 'w-full' : ''}`}></span>
             </Link>
           </div>
 
@@ -161,7 +158,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Link 
               to="/contact"
-              className="bg-[#F26C45] text-white px-6 py-3 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-md hover:shadow-lg transform hover:scale-105"
+              className="btn-animate bg-[#F26C45] text-white px-6 py-3 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               Book Appointment
             </Link>
@@ -169,7 +166,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-[#1E4C4C]"
+            className="lg:hidden text-[#1E4C4C] p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -177,25 +174,68 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden mt-4 py-4 border-t border-gray-200 bg-white rounded-lg shadow-xl animate-fadeIn">
-            <div className="flex flex-col space-y-4 px-4">
-              <Link to="/" className="text-[#1E4C4C] hover:text-[#F26C45] transition-colors font-medium py-2 hover:bg-gray-50 px-4 rounded-lg">Home</Link>
-              <Link to="/about" className="text-[#1E4C4C] hover:text-[#F26C45] transition-colors font-medium py-2 hover:bg-gray-50 px-4 rounded-lg">About Us</Link>
-              <Link to="/services" className="text-[#1E4C4C] hover:text-[#F26C45] transition-colors font-medium py-2 hover:bg-gray-50 px-4 rounded-lg">Services</Link>
-              <Link to="/doctors" className="text-[#1E4C4C] hover:text-[#F26C45] transition-colors font-medium py-2 hover:bg-gray-50 px-4 rounded-lg">Doctors</Link>
-              <Link to="/blog" className="text-[#1E4C4C] hover:text-[#F26C45] transition-colors font-medium py-2 hover:bg-gray-50 px-4 rounded-lg">Blog</Link>
-              <Link to="/testimonials" className="text-[#1E4C4C] hover:text-[#F26C45] transition-colors font-medium py-2 hover:bg-gray-50 px-4 rounded-lg">Testimonials</Link>
-              <Link to="/contact" className="text-[#1E4C4C] hover:text-[#F26C45] transition-colors font-medium py-2 hover:bg-gray-50 px-4 rounded-lg">Contact</Link>
-              <Link 
-                to="/contact"
-                className="bg-[#F26C45] text-white px-6 py-3 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-medium w-fit transform hover:scale-105"
-              >
-                Book Appointment
-              </Link>
-            </div>
+        <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
+          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="py-4 space-y-2">
+            <Link 
+              to="/" 
+              className="block text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors font-medium py-3 px-4 rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/about" 
+              className="block text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors font-medium py-3 px-4 rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About Us
+            </Link>
+            <Link 
+              to="/services" 
+              className="block text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors font-medium py-3 px-4 rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Services
+            </Link>
+            <Link 
+              to="/doctors" 
+              className="block text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors font-medium py-3 px-4 rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Doctors
+            </Link>
+            <Link 
+              to="/blog" 
+              className="block text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors font-medium py-3 px-4 rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blog
+            </Link>
+            <Link 
+              to="/testimonials" 
+              className="block text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors font-medium py-3 px-4 rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Testimonials
+            </Link>
+            <Link 
+              to="/contact" 
+              className="block text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors font-medium py-3 px-4 rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            <Link 
+              to="/contact"
+              className="block bg-[#F26C45] text-white px-6 py-3 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold text-center mt-4 mx-4"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Book Appointment
+            </Link>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );

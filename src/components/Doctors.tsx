@@ -1,4 +1,3 @@
-import ImageWithFallback from './ImageWithFallback';
 import React, { useEffect, useRef, useState } from 'react';
 import { Star, Calendar, MapPin, Award, GraduationCap } from 'lucide-react';
 
@@ -74,9 +73,9 @@ const Doctors = () => {
   return (
     <section id="doctors" className="py-20 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fadeIn">
           <div className="inline-block mb-6">
-            <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md">
+            <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
               Our Medical Team
             </span>
           </div>
@@ -97,7 +96,7 @@ const Doctors = () => {
               key={index}
               data-index={index}
               data-animate="doctor"
-              className={`group bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-500 overflow-hidden cursor-pointer transform hover:-translate-y-4 border border-gray-100 ${
+              className={`group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer card-hover ${
                 visibleItems.has(index.toString()) 
                   ? 'translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
@@ -113,13 +112,13 @@ const Doctors = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 
                 {/* Rating Badge */}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-2 flex items-center space-x-1 shadow-md">
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-2 flex items-center space-x-1 shadow-lg">
                   <Star className="text-yellow-400 fill-current" size={16} />
                   <span className="text-sm font-bold text-gray-800">{doctor.rating}</span>
                 </div>
 
                 {/* Specialty Badge */}
-                <div className="absolute bottom-4 left-4 bg-[#F26C45] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md">
+                <div className="absolute bottom-4 left-4 bg-[#F26C45] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                   {doctor.specialty}
                 </div>
               </div>
@@ -177,7 +176,7 @@ const Doctors = () => {
                   </div>
                 </div>
 
-                <button className="w-full bg-[#F26C45] text-white py-3 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-md hover:shadow-lg transform hover:scale-105">
+                <button className="w-full btn-animate bg-[#F26C45] text-white py-3 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
                   Book Appointment
                 </button>
               </div>
@@ -186,7 +185,7 @@ const Doctors = () => {
         </div>
 
         <div className="text-center mt-16">
-          <button className="bg-transparent border-2 border-[#F26C45] text-[#F26C45] px-10 py-4 rounded-full hover:bg-[#F26C45] hover:text-white transition-all duration-300 font-semibold shadow-md hover:shadow-lg transform hover:scale-105">
+          <button className="bg-transparent border-2 border-[#F26C45] text-[#F26C45] px-10 py-4 rounded-full hover:bg-[#F26C45] hover:text-white transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
             View All Doctors
           </button>
         </div>
