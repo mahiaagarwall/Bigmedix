@@ -1,6 +1,5 @@
-import ImageWithFallback from './ImageWithFallback';
 import React, { useEffect, useRef, useState } from 'react';
-import { Heart, Brain, Eye, Bone, Baby, Stethoscope, Activity, Shield, ArrowRight } from 'lucide-react';
+import { Heart, Brain, Eye, Bone, Baby, Stethoscope, Activity, Shield, ArrowRight, Plus } from 'lucide-react';
 
 const Services = () => {
   const [visibleItems, setVisibleItems] = useState(new Set());
@@ -84,23 +83,20 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+    <section id="services" className="py-20 bg-[#F4F8F6] relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
-      </div>
-
+      <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
+      
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fadeIn">
           <div className="inline-block mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
+            <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
               Our Medical Services
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1E4C4C] mb-6 leading-tight">
             Comprehensive Healthcare
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500 block">
+            <span className="text-[#F26C45] block">
               Solutions
             </span>
           </h2>
@@ -115,46 +111,62 @@ const Services = () => {
               key={index}
               data-index={index}
               data-animate="service"
-              className={`group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 cursor-pointer transform hover:-translate-y-4 ${
+              className={`group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 cursor-pointer card-hover ${
                 visibleItems.has(index.toString()) 
                   ? 'translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className={`w-20 h-20 bg-gradient-to-br ${service.color} rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
-                <service.icon className="text-white" size={36} />
+              <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
+                <service.icon className="text-white" size={32} />
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-xl font-bold text-[#1E4C4C] mb-4 group-hover:text-[#F26C45] transition-colors">
                 {service.title}
               </h3>
               
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-600 mb-6 leading-relaxed text-sm">
                 {service.description}
               </p>
               
-              <ul className="space-y-3 mb-6">
+              <ul className="space-y-2 mb-6">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm text-gray-500 group-hover:text-gray-700 transition-colors">
-                    <div className={`w-2 h-2 bg-gradient-to-r ${service.color} rounded-full mr-3 group-hover:scale-125 transition-transform`}></div>
+                  <li key={featureIndex} className="flex items-center text-sm text-gray-500 group-hover:text-gray-600 transition-colors">
+                    <div className="w-1.5 h-1.5 bg-[#F26C45] rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
               </ul>
 
-              <button className="flex items-center space-x-2 text-blue-600 font-semibold group-hover:text-orange-500 transition-colors">
+              <button className="flex items-center space-x-2 text-[#F26C45] font-semibold group-hover:text-[#e55a3a] transition-colors text-sm">
                 <span>Learn More</span>
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-4 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1">
-            View All Services
-          </button>
+        {/* See All Services Card */}
+        <div className="mt-8 flex justify-center">
+          <div className="group bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer card-hover text-center text-white max-w-sm">
+            <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-all duration-300">
+              <Plus className="text-white" size={32} />
+            </div>
+            
+            <h3 className="text-xl font-bold mb-4">
+              View All Services
+            </h3>
+            
+            <p className="text-white/90 mb-6 leading-relaxed text-sm">
+              Explore our complete range of medical specialties and healthcare services.
+            </p>
+
+            <button className="flex items-center space-x-2 text-white font-semibold mx-auto group-hover:translate-x-1 transition-transform text-sm">
+              <span>See All Services</span>
+              <ArrowRight size={14} />
+            </button>
+          </div>
         </div>
       </div>
     </section>

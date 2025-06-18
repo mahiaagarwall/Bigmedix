@@ -5,11 +5,11 @@ import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin, Clock, Hea
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-gray-900 via-[#1E4C4C] to-gray-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-64 h-64 bg-[#F26C45] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-[#F26C45] rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 py-16 relative z-10">
@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-3 group cursor-pointer">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
                 <span className="text-white font-bold text-2xl">+</span>
               </div>
               <div>
@@ -100,7 +100,7 @@ const Footer = () => {
             <h3 className="text-2xl font-bold mb-6 text-white">Contact Info</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3 group">
-                <MapPin className="text-blue-400 mt-1 group-hover:text-blue-300 transition-colors" size={20} />
+                <MapPin className="text-[#F26C45] mt-1 group-hover:text-[#e55a3a] transition-colors" size={20} />
                 <div>
                   <div className="font-bold text-white">Main Location</div>
                   <div className="text-gray-300">123 Medical Plaza<br />Health City, HC 12345</div>
@@ -115,7 +115,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start space-x-3 group">
-                <Mail className="text-orange-400 mt-1 group-hover:text-orange-300 transition-colors" size={20} />
+                <Mail className="text-[#F26C45] mt-1 group-hover:text-[#e55a3a] transition-colors" size={20} />
                 <div>
                   <div className="font-bold text-white">Email</div>
                   <div className="text-gray-300">info@bigmedix.com</div>
@@ -144,7 +144,7 @@ const Footer = () => {
               <div className={`w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110`}>
                 <stat.icon className={stat.color} size={32} />
               </div>
-              <div className="text-3xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
+              <div className="text-3xl font-bold text-white mb-2 group-hover:text-[#F26C45] transition-colors">
                 {stat.number}
               </div>
               <div className="text-gray-300 group-hover:text-white transition-colors">
