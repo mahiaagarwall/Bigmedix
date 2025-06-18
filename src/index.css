@@ -87,4 +87,50 @@ html {
   --primary-orange: #F26C45;
   --primary-teal: #1E4C4C;
   --hover-orange: #e55a3a;
+  --background-cream: #F4F8F6;
+}
+
+/* Ensure proper color consistency */
+.text-primary {
+  color: var(--primary-orange);
+}
+
+.bg-primary {
+  background-color: var(--primary-orange);
+}
+
+.text-secondary {
+  color: var(--primary-teal);
+}
+
+.bg-secondary {
+  background-color: var(--primary-teal);
+}
+
+.bg-cream {
+  background-color: var(--background-cream);
+}
+
+/* Form focus states */
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary-orange) !important;
+  box-shadow: 0 0 0 4px rgba(242, 108, 69, 0.1) !important;
+}
+
+/* Button hover states */
+.btn-primary:hover {
+  background-color: var(--hover-orange) !important;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item:hover {
+  background-color: #f9fafb;
+  color: var(--primary-orange);
 }

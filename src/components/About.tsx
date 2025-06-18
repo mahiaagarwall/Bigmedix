@@ -58,7 +58,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 bg-gray-50 relative overflow-hidden">
+    <section id="about" ref={sectionRef} className="py-20 bg-[#F4F8F6] relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>

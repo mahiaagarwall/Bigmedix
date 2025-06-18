@@ -89,7 +89,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 bg-gray-50 relative overflow-hidden">
+    <section id="testimonials" className="py-20 bg-[#F4F8F6] relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-block mb-6">

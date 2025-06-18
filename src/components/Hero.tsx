@@ -1,6 +1,6 @@
 import ImageWithFallback from './ImageWithFallback';
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Play, Shield, Award, Users, Clock } from 'lucide-react';
+import { ArrowRight, Shield, Award, Users, Clock } from 'lucide-react';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +10,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen bg-gradient-to-br from-[#f8f6f3] to-[#faf9f7] overflow-hidden pt-20">
+    <section id="home" className="relative min-h-screen bg-[#F4F8F6] overflow-hidden pt-20">
       {/* Hexagon Pattern Background */}
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
@@ -49,13 +49,6 @@ const Hero = () => {
               <button className="group bg-[#F26C45] text-white px-8 py-4 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl transform hover:scale-105">
                 <span>Book Appointment</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              
-              <button className="group flex items-center space-x-3 text-[#1E4C4C] hover:text-[#F26C45] transition-all duration-300 font-semibold">
-                <div className="w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white transition-all duration-300 group-hover:scale-110 shadow-md">
-                  <Play size={20} className="ml-1" />
-                </div>
-                <span>Watch Our Story</span>
               </button>
             </div>
 
