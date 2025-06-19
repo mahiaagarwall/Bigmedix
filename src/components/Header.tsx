@@ -29,11 +29,11 @@ const Header = () => {
       <nav className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3 group cursor-pointer">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105 animate-pulse-glow">
-              <span className="text-white font-bold text-xl">+</span>
+            <div className="w-12 h-12 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+              <span className="text-white font-bold text-2xl">+</span>
             </div>
             <div>
-              <span className="text-2xl font-bold text-[#1E4C4C] transition-colors duration-300">
+              <span className="text-3xl font-bold text-[#1E4C4C] transition-colors duration-300">
                 BigMedix
               </span>
             </div>
