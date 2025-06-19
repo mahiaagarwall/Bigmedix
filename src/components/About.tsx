@@ -133,15 +133,15 @@ const About = () => {
               <div className="space-y-6">
                 <div className="relative overflow-hidden rounded-2xl shadow-lg group">
                   <img
-                    src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="Diverse medical team collaborating on patient care"
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                    alt="Medical team collaborating on patient care in modern healthcare facility"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <div className="relative overflow-hidden rounded-2xl shadow-lg group">
                   <img
-                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="Modern medical facility with advanced equipment"
+                    src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                    alt="State-of-the-art medical equipment and technology in modern hospital"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
@@ -149,15 +149,15 @@ const About = () => {
               <div className="space-y-6 pt-12">
                 <div className="relative overflow-hidden rounded-2xl shadow-lg group">
                   <img
-                    src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
                     alt="Healthcare professional providing compassionate patient care"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <div className="relative overflow-hidden rounded-2xl shadow-lg group">
                   <img
-                    src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="State-of-the-art medical equipment and technology"
+                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                    alt="Advanced medical facility with cutting-edge healthcare technology"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>

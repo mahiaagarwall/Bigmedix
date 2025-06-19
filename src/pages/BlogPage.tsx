@@ -16,7 +16,7 @@ const BlogPage = () => {
       date: '2024-01-15',
       readTime: '5 min read',
       category: 'Cardiology',
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       featured: true
     },
     {
@@ -28,7 +28,7 @@ const BlogPage = () => {
       date: '2024-01-12',
       readTime: '7 min read',
       category: 'Pediatrics',
-      image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       featured: false
     },
     {
@@ -40,7 +40,7 @@ const BlogPage = () => {
       date: '2024-01-10',
       readTime: '6 min read',
       category: 'Mental Health',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       featured: false
     },
     {
@@ -52,7 +52,7 @@ const BlogPage = () => {
       date: '2024-01-08',
       readTime: '8 min read',
       category: 'Orthopedics',
-      image: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       featured: false
     },
     {
@@ -64,7 +64,7 @@ const BlogPage = () => {
       date: '2024-01-05',
       readTime: '10 min read',
       category: 'Internal Medicine',
-      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       featured: false
     },
     {
@@ -76,7 +76,7 @@ const BlogPage = () => {
       date: '2024-01-03',
       readTime: '6 min read',
       category: 'Women\'s Health',
-      image: 'https://images.unsplash.com/photo-1594824475317-d3c2b8b7b3b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1594824475317-d3c2b8b7b3b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       featured: false
     }
   ];

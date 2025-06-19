@@ -78,8 +78,8 @@ const Hero = () => {
             <div className="relative z-10">
               <div className="relative overflow-hidden rounded-3xl shadow-2xl animate-float">
                 <img
-                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Professional healthcare team providing compassionate patient care"
+                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                  alt="Friendly healthcare professional with clipboard in modern medical facility"
                   className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1E4C4C]/10 to-transparent"></div>
