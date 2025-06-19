@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Calendar, Send, MessageCircle, Users, Award, Navigation, Car, Bus } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Calendar, Send, MessageCircle, Users, Award, Navigation, Car, Bus, ArrowRight } from 'lucide-react';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -80,21 +80,22 @@ const ContactPage = () => {
   return (
     <div className="pt-32">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-[#1E4C4C] via-[#1E4C4C] to-[#0f2626] text-white relative overflow-hidden">
+        <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-64 h-64 bg-[#F26C45] rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
               Contact
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26C45] to-[#e55a3a] block">
                 BigMedix
               </span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
               Get in touch with us for appointments, questions, or emergency care. We're here to help you 24/7 with all your healthcare needs.
             </p>
           </div>
@@ -102,10 +103,11 @@ const ContactPage = () => {
       </section>
 
       {/* Quick Contact Cards */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-[#F4F8F6] relative overflow-hidden">
+        <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 card-hover">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
                 <Phone className="text-white" size={32} />
               </div>
@@ -115,17 +117,17 @@ const ContactPage = () => {
               <div className="text-red-200">Available 24/7</div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div className="bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 card-hover">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
                 <Calendar className="text-white" size={32} />
               </div>
               <h3 className="text-2xl font-bold mb-4">Appointments</h3>
-              <p className="text-blue-100 mb-6">Schedule your visit online or by phone</p>
+              <p className="text-orange-100 mb-6">Schedule your visit online or by phone</p>
               <div className="text-3xl font-bold mb-2">+1 (555) 123-4567</div>
-              <div className="text-blue-200">Mon-Fri: 8AM-6PM</div>
+              <div className="text-orange-200">Mon-Fri: 8AM-6PM</div>
             </div>
 
-            <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+            <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 card-hover">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
                 <MessageCircle className="text-white" size={32} />
               </div>
@@ -140,38 +142,38 @@ const ContactPage = () => {
       </section>
 
       {/* Main Contact Form */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl">
+            <div className="bg-white rounded-3xl p-8 shadow-xl card-hover">
               <div className="flex items-center mb-8">
-                <Send className="text-blue-600 mr-4" size={32} />
-                <h2 className="text-3xl font-bold text-gray-900">Send us a Message</h2>
+                <Send className="text-[#F26C45] mr-4" size={32} />
+                <h2 className="text-3xl font-bold text-[#1E4C4C]">Send us a Message</h2>
               </div>
               
               <form className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="group">
-                    <label className="block text-sm font-bold text-gray-700 mb-3">First Name *</label>
+                    <label className="block text-sm font-bold text-[#1E4C4C] mb-3">First Name *</label>
                     <input
                       type="text"
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 group-hover:border-gray-300"
+                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your first name"
                       required
                     />
                   </div>
                   <div className="group">
-                    <label className="block text-sm font-bold text-gray-700 mb-3">Last Name *</label>
+                    <label className="block text-sm font-bold text-[#1E4C4C] mb-3">Last Name *</label>
                     <input
                       type="text"
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 group-hover:border-gray-300"
+                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your last name"
                       required
                     />
@@ -180,25 +182,25 @@ const ContactPage = () => {
 
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="group">
-                    <label className="block text-sm font-bold text-gray-700 mb-3">Email *</label>
+                    <label className="block text-sm font-bold text-[#1E4C4C] mb-3">Email *</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 group-hover:border-gray-300"
+                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your email address"
                       required
                     />
                   </div>
                   <div className="group">
-                    <label className="block text-sm font-bold text-gray-700 mb-3">Phone</label>
+                    <label className="block text-sm font-bold text-[#1E4C4C] mb-3">Phone</label>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 group-hover:border-gray-300"
+                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -206,12 +208,12 @@ const ContactPage = () => {
 
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="group">
-                    <label className="block text-sm font-bold text-gray-700 mb-3">Department</label>
+                    <label className="block text-sm font-bold text-[#1E4C4C] mb-3">Department</label>
                     <select 
                       name="department"
                       value={formData.department}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 group-hover:border-gray-300"
+                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                     >
                       <option value="">Select Department</option>
                       <option value="general">General Inquiry</option>
@@ -224,12 +226,12 @@ const ContactPage = () => {
                     </select>
                   </div>
                   <div className="group">
-                    <label className="block text-sm font-bold text-gray-700 mb-3">Preferred Contact Method</label>
+                    <label className="block text-sm font-bold text-[#1E4C4C] mb-3">Preferred Contact Method</label>
                     <select 
                       name="contactMethod"
                       value={formData.contactMethod}
                       onChange={handleInputChange}
-                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 group-hover:border-gray-300"
+                      className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                     >
                       <option value="email">Email</option>
                       <option value="phone">Phone</option>
@@ -239,13 +241,13 @@ const ContactPage = () => {
                 </div>
 
                 <div className="group">
-                  <label className="block text-sm font-bold text-gray-700 mb-3">Message *</label>
+                  <label className="block text-sm font-bold text-[#1E4C4C] mb-3">Message *</label>
                   <textarea
                     rows={6}
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 resize-none group-hover:border-gray-300"
+                    className="w-full px-6 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 resize-none group-hover:border-gray-300"
                     placeholder="Please describe your inquiry or concern..."
                     required
                   ></textarea>
@@ -253,26 +255,27 @@ const ContactPage = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 rounded-2xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold flex items-center justify-center space-x-3 shadow-xl hover:shadow-2xl transform hover:scale-105"
+                  className="w-full bg-gradient-to-r from-[#F26C45] to-[#e55a3a] text-white py-4 rounded-2xl hover:from-[#e55a3a] hover:to-[#d14d2f] transition-all duration-300 font-bold flex items-center justify-center space-x-3 shadow-xl hover:shadow-2xl transform hover:scale-105"
                 >
                   <Send size={24} />
                   <span>Send Message</span>
+                  <ArrowRight size={20} />
                 </button>
               </form>
             </div>
 
             {/* Contact Information */}
             <div className="space-y-8">
-              <div className="bg-white rounded-3xl p-8 shadow-xl">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+              <div className="bg-white rounded-3xl p-8 shadow-xl card-hover">
+                <h3 className="text-2xl font-bold text-[#1E4C4C] mb-6">Get in Touch</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                      <Phone className="text-blue-600" size={24} />
+                    <div className="w-12 h-12 bg-[#F26C45]/10 rounded-full flex items-center justify-center">
+                      <Phone className="text-[#F26C45]" size={24} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Phone</h4>
+                      <h4 className="font-bold text-[#1E4C4C] mb-2">Phone</h4>
                       <p className="text-gray-600 mb-2">Main: +1 (555) 123-4567</p>
                       <p className="text-red-600 font-medium">Emergency: +1 (555) 911-HELP</p>
                     </div>
@@ -283,7 +286,7 @@ const ContactPage = () => {
                       <Mail className="text-green-600" size={24} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Email</h4>
+                      <h4 className="font-bold text-[#1E4C4C] mb-2">Email</h4>
                       <p className="text-gray-600 mb-1">info@bigmedix.com</p>
                       <p className="text-gray-600">appointments@bigmedix.com</p>
                     </div>
@@ -291,10 +294,10 @@ const ContactPage = () => {
 
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                      <MapPin className="text-orange-600" size={24} />
+                      <MapPin className="text-[#F26C45]" size={24} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Main Location</h4>
+                      <h4 className="font-bold text-[#1E4C4C] mb-2">Main Location</h4>
                       <p className="text-gray-600">123 Medical Plaza<br />Health City, HC 12345</p>
                     </div>
                   </div>
@@ -304,7 +307,7 @@ const ContactPage = () => {
                       <Clock className="text-purple-600" size={24} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Hours</h4>
+                      <h4 className="font-bold text-[#1E4C4C] mb-2">Hours</h4>
                       <p className="text-gray-600 mb-1">Mon-Fri: 8:00 AM - 6:00 PM</p>
                       <p className="text-gray-600 mb-1">Saturday: 9:00 AM - 4:00 PM</p>
                       <p className="text-red-600 font-medium">Emergency: 24/7</p>
@@ -314,17 +317,17 @@ const ContactPage = () => {
               </div>
 
               {/* Department Directory */}
-              <div className="bg-white rounded-3xl p-8 shadow-xl">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Department Directory</h3>
+              <div className="bg-white rounded-3xl p-8 shadow-xl card-hover">
+                <h3 className="text-2xl font-bold text-[#1E4C4C] mb-6">Department Directory</h3>
                 
                 <div className="space-y-4">
                   {departments.map((dept, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors">
+                    <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-2xl hover:bg-[#F26C45]/5 transition-colors">
                       <div>
-                        <div className="font-medium text-gray-900">{dept.name}</div>
+                        <div className="font-medium text-[#1E4C4C]">{dept.name}</div>
                         <div className="text-sm text-gray-600">Ext. {dept.ext}</div>
                       </div>
-                      <div className="text-blue-600 font-medium">{dept.phone}</div>
+                      <div className="text-[#F26C45] font-medium">{dept.phone}</div>
                     </div>
                   ))}
                 </div>
@@ -335,10 +338,16 @@ const ContactPage = () => {
       </section>
 
       {/* Locations */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-[#F4F8F6] relative overflow-hidden">
+        <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Locations</h2>
+            <div className="inline-block mb-6">
+              <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
+                Our Locations
+              </span>
+            </div>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Our Locations</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Visit us at any of our convenient locations throughout the city. Each facility offers specialized services and expert care.
             </p>
@@ -346,7 +355,7 @@ const ContactPage = () => {
           
           <div className="grid lg:grid-cols-3 gap-8">
             {locations.map((location, index) => (
-              <div key={index} className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group hover:-translate-y-2">
+              <div key={index} className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group hover:-translate-y-2 card-hover">
                 <div className="relative overflow-hidden">
                   <img
                     src={location.image}
@@ -361,9 +370,9 @@ const ContactPage = () => {
                 
                 <div className="p-6 space-y-4">
                   <div className="flex items-start space-x-3">
-                    <MapPin className="text-blue-600 mt-1" size={20} />
+                    <MapPin className="text-[#F26C45] mt-1" size={20} />
                     <div>
-                      <div className="font-medium text-gray-900">Address</div>
+                      <div className="font-medium text-[#1E4C4C]">Address</div>
                       <div className="text-gray-600">{location.address}</div>
                     </div>
                   </div>
@@ -371,7 +380,7 @@ const ContactPage = () => {
                   <div className="flex items-start space-x-3">
                     <Phone className="text-green-600 mt-1" size={20} />
                     <div>
-                      <div className="font-medium text-gray-900">Contact</div>
+                      <div className="font-medium text-[#1E4C4C]">Contact</div>
                       <div className="text-gray-600">{location.phone}</div>
                       <div className="text-gray-600">{location.email}</div>
                     </div>
@@ -380,7 +389,7 @@ const ContactPage = () => {
                   <div className="flex items-start space-x-3">
                     <Clock className="text-orange-600 mt-1" size={20} />
                     <div>
-                      <div className="font-medium text-gray-900">Hours</div>
+                      <div className="font-medium text-[#1E4C4C]">Hours</div>
                       <div className="text-gray-600">{location.hours.weekdays}</div>
                       <div className="text-gray-600">{location.hours.weekend}</div>
                     </div>
@@ -389,7 +398,7 @@ const ContactPage = () => {
                   <div className="flex items-start space-x-3">
                     <Car className="text-purple-600 mt-1" size={20} />
                     <div>
-                      <div className="font-medium text-gray-900">Parking</div>
+                      <div className="font-medium text-[#1E4C4C]">Parking</div>
                       <div className="text-gray-600">{location.parking}</div>
                     </div>
                   </div>
@@ -397,25 +406,26 @@ const ContactPage = () => {
                   <div className="flex items-start space-x-3">
                     <Bus className="text-indigo-600 mt-1" size={20} />
                     <div>
-                      <div className="font-medium text-gray-900">Public Transport</div>
+                      <div className="font-medium text-[#1E4C4C]">Public Transport</div>
                       <div className="text-gray-600 text-sm">{location.publicTransport}</div>
                     </div>
                   </div>
                   
                   <div className="pt-4 border-t border-gray-200">
-                    <div className="text-sm font-medium text-gray-900 mb-3">Services Available:</div>
+                    <div className="text-sm font-medium text-[#1E4C4C] mb-3">Services Available:</div>
                     <div className="flex flex-wrap gap-2">
                       {location.services.map((service, serviceIndex) => (
-                        <span key={serviceIndex} className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-xs font-medium">
+                        <span key={serviceIndex} className="bg-[#F26C45]/10 text-[#F26C45] px-3 py-1 rounded-full text-xs font-medium">
                           {service}
                         </span>
                       ))}
                     </div>
                   </div>
 
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center space-x-2">
+                  <button className="w-full bg-gradient-to-r from-[#F26C45] to-[#e55a3a] text-white py-3 rounded-full hover:from-[#e55a3a] hover:to-[#d14d2f] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center space-x-2">
                     <Navigation size={18} />
                     <span>Get Directions</span>
+                    <ArrowRight size={16} />
                   </button>
                 </div>
               </div>
@@ -425,10 +435,15 @@ const ContactPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <div className="inline-block mb-6">
+              <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
+                FAQ
+              </span>
+            </div>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Find quick answers to common questions about our services, appointments, and policies.
             </p>
@@ -461,8 +476,8 @@ const ContactPage = () => {
                 answer: "We require at least 24 hours notice for appointment cancellations. Late cancellations or no-shows may result in a fee."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.question}</h3>
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 card-hover">
+                <h3 className="text-lg font-bold text-[#1E4C4C] mb-3">{faq.question}</h3>
                 <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
