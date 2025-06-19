@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Award, Users, Clock, MapPin, CheckCircle, Play } from 'lucide-react';
 
 const About = () => {
@@ -115,9 +116,12 @@ const About = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="btn-animate bg-[#F26C45] text-white px-8 py-4 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
+              <Link 
+                to="/about"
+                className="btn-animate bg-[#F26C45] text-white px-8 py-4 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 text-center cursor-pointer"
+              >
                 Learn More About Us
-              </button>
+              </Link>
               
               <button className="group flex items-center space-x-3 text-[#1E4C4C] hover:text-[#F26C45] transition-all duration-300 font-semibold px-4">
                 <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-[#F26C45]/10 transition-all duration-300 group-hover:scale-110 shadow-md">
@@ -133,15 +137,15 @@ const About = () => {
               <div className="space-y-6">
                 <div className="relative overflow-hidden rounded-2xl shadow-lg group">
                   <img
-                    src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="Diverse medical team collaborating on patient care"
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                    alt="Medical team collaborating on patient care in modern healthcare facility"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <div className="relative overflow-hidden rounded-2xl shadow-lg group">
                   <img
-                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="Modern medical facility with advanced equipment"
+                    src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                    alt="State-of-the-art medical equipment and technology in modern hospital"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
@@ -149,15 +153,15 @@ const About = () => {
               <div className="space-y-6 pt-12">
                 <div className="relative overflow-hidden rounded-2xl shadow-lg group">
                   <img
-                    src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
                     alt="Healthcare professional providing compassionate patient care"
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <div className="relative overflow-hidden rounded-2xl shadow-lg group">
                   <img
-                    src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="State-of-the-art medical equipment and technology"
+                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                    alt="Advanced medical facility with cutting-edge healthcare technology"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>

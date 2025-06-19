@@ -29,11 +29,11 @@ const Header = () => {
       <nav className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3 group cursor-pointer">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105 animate-pulse-glow">
-              <span className="text-white font-bold text-xl">+</span>
+            <div className="w-12 h-12 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+              <span className="text-white font-bold text-2xl">+</span>
             </div>
             <div>
-              <span className="text-2xl font-bold text-[#1E4C4C] transition-colors duration-300">
+              <span className="text-3xl font-bold text-[#1E4C4C] transition-colors duration-300">
                 BigMedix
               </span>
             </div>
@@ -158,7 +158,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Link 
               to="/contact"
-              className="btn-animate bg-[#F26C45] text-white px-6 py-3 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="btn-animate bg-[#F26C45] text-white px-6 py-3 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
             >
               Book Appointment
             </Link>

@@ -117,21 +117,22 @@ const ServicesPage = () => {
   return (
     <div className="pt-32">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-[#1E4C4C] via-[#1E4C4C] to-[#0f2626] text-white relative overflow-hidden">
+        <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-64 h-64 bg-[#F26C45] rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
               Medical
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26C45] to-[#e55a3a] block">
                 Services
               </span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
               Comprehensive healthcare solutions across multiple specialties with state-of-the-art technology and expert medical professionals.
             </p>
           </div>
@@ -139,10 +140,16 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-[#F4F8F6] relative overflow-hidden">
+        <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Specialties</h2>
+            <div className="inline-block mb-6">
+              <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
+                Our Specialties
+              </span>
+            </div>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Our Specialties</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We provide world-class medical services across multiple specialties, ensuring you receive the best possible care for all your health needs.
             </p>
@@ -154,7 +161,7 @@ const ServicesPage = () => {
                 key={index}
                 data-index={index}
                 data-animate="service"
-                className={`group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 cursor-pointer transform hover:-translate-y-4 ${
+                className={`group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 cursor-pointer transform hover:-translate-y-4 card-hover ${
                   visibleItems.has(index.toString()) 
                     ? 'translate-y-0 opacity-100' 
                     : 'translate-y-8 opacity-0'
@@ -165,7 +172,7 @@ const ServicesPage = () => {
                   <service.icon className="text-white" size={36} />
                 </div>
                 
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4 group-hover:text-[#F26C45] transition-colors">
                   {service.title}
                 </h3>
                 
@@ -176,7 +183,7 @@ const ServicesPage = () => {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-500">Specialists Available:</span>
-                    <span className="font-bold text-blue-600">{service.specialists}</span>
+                    <span className="font-bold text-[#F26C45]">{service.specialists}</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-500">Emergency Care:</span>
@@ -186,8 +193,9 @@ const ServicesPage = () => {
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
-                  Learn More
+                <button className="w-full bg-gradient-to-r from-[#F26C45] to-[#e55a3a] text-white py-3 rounded-full hover:from-[#e55a3a] hover:to-[#d14d2f] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center space-x-2">
+                  <span>Learn More</span>
+                  <ArrowRight size={16} />
                 </button>
               </div>
             ))}
@@ -196,7 +204,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Detailed Services */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="space-y-20">
             {services.slice(0, 4).map((service, index) => (
@@ -207,8 +215,8 @@ const ServicesPage = () => {
                       <service.icon className="text-white" size={28} />
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-gray-900">{service.title}</h3>
-                      <div className="text-blue-600 font-medium">Comprehensive Care</div>
+                      <h3 className="text-3xl font-bold text-[#1E4C4C]">{service.title}</h3>
+                      <div className="text-[#F26C45] font-medium">Comprehensive Care</div>
                     </div>
                   </div>
                   
@@ -218,7 +226,7 @@ const ServicesPage = () => {
 
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                      <h4 className="text-lg font-bold text-[#1E4C4C] mb-4 flex items-center">
                         <CheckCircle className="text-green-600 mr-2" size={20} />
                         Services Offered
                       </h4>
@@ -233,8 +241,8 @@ const ServicesPage = () => {
                     </div>
                     
                     <div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                        <Activity className="text-blue-600 mr-2" size={20} />
+                      <h4 className="text-lg font-bold text-[#1E4C4C] mb-4 flex items-center">
+                        <Activity className="text-[#F26C45] mr-2" size={20} />
                         Procedures
                       </h4>
                       <ul className="space-y-2">
@@ -249,10 +257,11 @@ const ServicesPage = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105">
-                      Schedule Consultation
+                    <button className="bg-gradient-to-r from-[#F26C45] to-[#e55a3a] text-white px-8 py-4 rounded-full hover:from-[#e55a3a] hover:to-[#d14d2f] transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-2">
+                      <span>Schedule Consultation</span>
+                      <ArrowRight size={20} />
                     </button>
-                    <button className="flex items-center justify-center space-x-2 text-blue-600 hover:text-orange-500 transition-colors font-semibold px-8 py-4 border-2 border-blue-600 rounded-full hover:border-orange-500">
+                    <button className="flex items-center justify-center space-x-2 text-[#F26C45] hover:text-[#e55a3a] transition-colors font-semibold px-8 py-4 border-2 border-[#F26C45] rounded-full hover:border-[#e55a3a]">
                       <span>View Specialists</span>
                       <ArrowRight size={20} />
                     </button>
@@ -276,7 +285,7 @@ const ServicesPage = () => {
                         <Award className="text-white" size={20} />
                       </div>
                       <div>
-                        <div className="font-bold text-gray-800">{service.specialists} Specialists</div>
+                        <div className="font-bold text-[#1E4C4C]">{service.specialists} Specialists</div>
                         <div className="text-sm text-gray-600">Expert Care Team</div>
                       </div>
                     </div>
@@ -289,14 +298,14 @@ const ServicesPage = () => {
       </section>
 
       {/* Emergency Services Highlight */}
-      <section className="py-20 bg-gradient-to-br from-red-600 to-red-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
               <Activity className="text-white" size={36} />
             </div>
             <h2 className="text-4xl font-bold mb-6">24/7 Emergency Care</h2>
-            <p className="text-xl text-red-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-orange-100 max-w-3xl mx-auto leading-relaxed">
               Our emergency department is staffed around the clock with board-certified emergency physicians and trauma specialists, ready to provide immediate, life-saving care when you need it most.
             </p>
           </div>
@@ -324,26 +333,33 @@ const ServicesPage = () => {
                   <feature.icon className="text-white" size={28} />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-red-100 leading-relaxed">{feature.description}</p>
+                <p className="text-orange-100 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-12">
             <div className="text-3xl font-bold mb-2">Emergency Hotline</div>
-            <div className="text-2xl text-red-200 mb-6">+1 (555) 911-HELP</div>
-            <button className="bg-white text-red-600 px-8 py-4 rounded-full hover:bg-red-50 transition-all duration-300 font-bold shadow-xl hover:shadow-2xl transform hover:scale-105">
-              Emergency Services Info
+            <div className="text-2xl text-orange-200 mb-6">+1 (555) 911-HELP</div>
+            <button className="bg-white text-[#F26C45] px-8 py-4 rounded-full hover:bg-orange-50 transition-all duration-300 font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center space-x-2 mx-auto">
+              <span>Emergency Services Info</span>
+              <ArrowRight size={20} />
             </button>
           </div>
         </div>
       </section>
 
       {/* Insurance & Payment */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-[#F4F8F6] relative overflow-hidden">
+        <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Insurance & Payment Options</h2>
+            <div className="inline-block mb-6">
+              <span className="bg-[#F26C45] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
+                Insurance & Payment
+              </span>
+            </div>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Insurance & Payment Options</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We accept most major insurance plans and offer flexible payment options to make quality healthcare accessible to everyone.
             </p>
@@ -360,16 +376,17 @@ const ServicesPage = () => {
               'Kaiser Permanente',
               'Self-Pay Options'
             ].map((insurance, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-6 text-center hover:bg-blue-50 transition-colors duration-300 group">
-                <Shield className="text-blue-600 mx-auto mb-4 group-hover:text-blue-700 transition-colors" size={32} />
-                <div className="font-medium text-gray-900 group-hover:text-blue-700 transition-colors">{insurance}</div>
+              <div key={index} className="bg-white rounded-2xl p-6 text-center hover:bg-[#F26C45]/5 transition-colors duration-300 group shadow-lg card-hover">
+                <Shield className="text-[#F26C45] mx-auto mb-4 group-hover:text-[#e55a3a] transition-colors" size={32} />
+                <div className="font-medium text-[#1E4C4C] group-hover:text-[#F26C45] transition-colors">{insurance}</div>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105">
-              Verify Insurance Coverage
+            <button className="bg-gradient-to-r from-[#F26C45] to-[#e55a3a] text-white px-8 py-4 rounded-full hover:from-[#e55a3a] hover:to-[#d14d2f] transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center space-x-2 mx-auto">
+              <span>Verify Insurance Coverage</span>
+              <ArrowRight size={20} />
             </button>
           </div>
         </div>

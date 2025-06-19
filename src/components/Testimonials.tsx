@@ -29,7 +29,7 @@ const Testimonials = () => {
       condition: 'Cardiac Surgery Patient',
       rating: 5,
       reviews: 127,
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       testimonial: 'The cardiac team at BigMedix saved my life. From the initial consultation to post-surgery care, every step was handled with incredible professionalism and compassion. I cannot thank Dr. Johnson and her team enough.',
       date: '2 weeks ago',
       treatment: 'Heart Surgery'
@@ -39,7 +39,7 @@ const Testimonials = () => {
       condition: 'Orthopedic Surgery Patient',
       rating: 5,
       reviews: 98,
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       testimonial: 'After my knee replacement surgery with Dr. Wilson, I\'m back to playing tennis again! The entire process was smooth, and the rehabilitation team helped me recover faster than I ever expected.',
       date: '1 month ago',
       treatment: 'Knee Replacement'
@@ -49,7 +49,7 @@ const Testimonials = () => {
       condition: 'Pediatric Care Parent',
       rating: 5,
       reviews: 156,
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       testimonial: 'Dr. Davis has been our family pediatrician for 3 years. She\'s amazing with children and always takes the time to address all our concerns. The staff is friendly and the facility is always clean and welcoming.',
       date: '3 weeks ago',
       treatment: 'Pediatric Care'
@@ -59,7 +59,7 @@ const Testimonials = () => {
       condition: 'Neurology Patient',
       rating: 5,
       reviews: 89,
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       testimonial: 'Dr. Chen\'s expertise in neurology is exceptional. He diagnosed my condition quickly and developed a treatment plan that has significantly improved my quality of life. The entire neurology team is outstanding.',
       date: '2 months ago',
       treatment: 'Neurological Treatment'
@@ -69,7 +69,7 @@ const Testimonials = () => {
       condition: 'Emergency Care Patient',
       rating: 5,
       reviews: 203,
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       testimonial: 'When I had a medical emergency at 2 AM, the BigMedix emergency team was incredible. They were fast, professional, and provided excellent care during a very scary time for my family.',
       date: '1 week ago',
       treatment: 'Emergency Care'
@@ -79,7 +79,7 @@ const Testimonials = () => {
       condition: 'Preventive Care Patient',
       rating: 5,
       reviews: 112,
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       testimonial: 'The preventive care program helped me identify health risks early. The comprehensive screening and personalized wellness plan have made a huge difference in my overall health and energy levels.',
       date: '1 month ago',
       treatment: 'Preventive Care'

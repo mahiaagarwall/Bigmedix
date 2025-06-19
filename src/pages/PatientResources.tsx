@@ -6,7 +6,7 @@ const PatientResources = () => {
     {
       category: 'Forms & Documents',
       icon: FileText,
-      color: 'from-blue-500 to-blue-600',
+      color: 'from-[#F26C45] to-[#e55a3a]',
       items: [
         { name: 'New Patient Registration Form', type: 'PDF', size: '2.1 MB' },
         { name: 'Medical History Questionnaire', type: 'PDF', size: '1.8 MB' },
@@ -56,7 +56,7 @@ const PatientResources = () => {
       title: 'Appointment Scheduling',
       description: 'Schedule, reschedule, or cancel appointments online at your convenience.',
       icon: Calendar,
-      color: 'from-blue-500 to-blue-600',
+      color: 'from-[#F26C45] to-[#e55a3a]',
       link: '#'
     },
     {
@@ -70,7 +70,7 @@ const PatientResources = () => {
       title: 'Find a Doctor',
       description: 'Search our directory of specialists and primary care physicians.',
       icon: MapPin,
-      color: 'from-orange-500 to-orange-600',
+      color: 'from-[#F26C45] to-[#e55a3a]',
       link: '#'
     }
   ];
@@ -102,21 +102,21 @@ const PatientResources = () => {
   return (
     <div className="pt-32">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-[#1E4C4C] via-[#1E4C4C] to-[#0f2626] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-64 h-64 bg-[#F26C45] rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Patient
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26C45] to-[#e55a3a] block">
                 Resources
               </span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
               Everything you need for a smooth healthcare experience - from forms and guides to appointment scheduling and bill payment.
             </p>
           </div>
@@ -127,7 +127,7 @@ const PatientResources = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Quick Access</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Quick Access</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Access the most commonly used patient services and tools with just one click.
             </p>
@@ -143,7 +143,7 @@ const PatientResources = () => {
                 <div className={`w-20 h-20 bg-gradient-to-br ${link.color} rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <link.icon className="text-white" size={36} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4 group-hover:text-[#F26C45] transition-colors">
                   {link.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -156,10 +156,10 @@ const PatientResources = () => {
       </section>
 
       {/* Downloadable Resources */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F4F8F6]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Downloadable Resources</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Downloadable Resources</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Download important forms, educational materials, and preparation guides to help you prepare for your visit.
             </p>
@@ -183,10 +183,10 @@ const PatientResources = () => {
                 <div className="p-8">
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {category.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className="group bg-gray-50 rounded-2xl p-6 hover:bg-blue-50 transition-all duration-300 cursor-pointer hover:-translate-y-1">
+                      <div key={itemIndex} className="group bg-[#F4F8F6] rounded-2xl p-6 hover:bg-[#F26C45]/10 transition-all duration-300 cursor-pointer hover:-translate-y-1">
                         <div className="flex items-start justify-between mb-4">
                           <div className="flex-1">
-                            <h4 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                            <h4 className="font-bold text-[#1E4C4C] mb-2 group-hover:text-[#F26C45] transition-colors">
                               {item.name}
                             </h4>
                             <div className="flex items-center space-x-4 text-sm text-gray-500">
@@ -196,8 +196,8 @@ const PatientResources = () => {
                               <span>{item.size}</span>
                             </div>
                           </div>
-                          <button className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                            <Download className="text-blue-600" size={20} />
+                          <button className="w-10 h-10 bg-[#F26C45]/10 rounded-full flex items-center justify-center group-hover:bg-[#F26C45]/20 transition-colors">
+                            <Download className="text-[#F26C45]" size={20} />
                           </button>
                         </div>
                       </div>
@@ -214,7 +214,7 @@ const PatientResources = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Contact Information</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Contact Information</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Get in touch with the right department for your needs. Our staff is here to help you navigate your healthcare journey.
             </p>
@@ -224,29 +224,29 @@ const PatientResources = () => {
             {contactInfo.map((location, index) => (
               <div key={index} className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 p-8 hover:-translate-y-2">
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <MapPin className="text-white" size={28} />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{location.title}</h3>
+                  <h3 className="text-2xl font-bold text-[#1E4C4C] mb-2">{location.title}</h3>
                 </div>
 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <Phone className="text-green-600" size={20} />
                     <div>
-                      <div className="font-bold text-gray-900">{location.phone}</div>
+                      <div className="font-bold text-[#1E4C4C]">{location.phone}</div>
                     </div>
                   </div>
                   
                   <div className="flex items-center space-x-3">
-                    <Clock className="text-blue-600" size={20} />
+                    <Clock className="text-[#F26C45]" size={20} />
                     <div>
                       <div className="text-gray-600">{location.hours}</div>
                     </div>
                   </div>
                   
                   <div className="flex items-start space-x-3">
-                    <MapPin className="text-orange-600 mt-1" size={20} />
+                    <MapPin className="text-[#F26C45] mt-1" size={20} />
                     <div>
                       <div className="text-gray-600">{location.address}</div>
                     </div>
@@ -254,10 +254,10 @@ const PatientResources = () => {
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-gray-200">
-                  <div className="text-sm font-medium text-gray-900 mb-3">Services Available:</div>
+                  <div className="text-sm font-medium text-[#1E4C4C] mb-3">Services Available:</div>
                   <div className="flex flex-wrap gap-2">
                     {location.services.map((service, serviceIndex) => (
-                      <span key={serviceIndex} className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-xs font-medium">
+                      <span key={serviceIndex} className="bg-[#F26C45]/10 text-[#F26C45] px-3 py-1 rounded-full text-xs font-medium">
                         {service}
                       </span>
                     ))}
@@ -270,14 +270,14 @@ const PatientResources = () => {
       </section>
 
       {/* Privacy & Security */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
               <Shield className="text-white" size={36} />
             </div>
             <h2 className="text-4xl font-bold mb-6">Your Privacy & Security</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-orange-100 max-w-3xl mx-auto leading-relaxed">
               We are committed to protecting your personal health information and maintaining the highest standards of privacy and security.
             </p>
           </div>
@@ -302,13 +302,13 @@ const PatientResources = () => {
                   <Shield className="text-white" size={28} />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-blue-100 leading-relaxed">{item.description}</p>
+                <p className="text-orange-100 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-blue-50 transition-all duration-300 font-bold shadow-xl hover:shadow-2xl transform hover:scale-105">
+            <button className="bg-white text-[#F26C45] px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 font-bold shadow-xl hover:shadow-2xl transform hover:scale-105">
               View Privacy Policy
             </button>
           </div>

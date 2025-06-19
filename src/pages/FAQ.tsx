@@ -137,21 +137,21 @@ const FAQ = () => {
   return (
     <div className="pt-32">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-[#1E4C4C] via-[#1E4C4C] to-[#0f2626] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-64 h-64 bg-[#F26C45] rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Frequently Asked
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26C45] to-[#e55a3a] block">
                 Questions
               </span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
               Find quick answers to common questions about our services, appointments, insurance, and policies. Can't find what you're looking for? Contact us directly.
             </p>
           </div>
@@ -169,7 +169,7 @@ const FAQ = () => {
                 placeholder="Search frequently asked questions..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 text-lg"
+                className="w-full pl-12 pr-4 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 text-lg"
               />
             </div>
             
@@ -180,8 +180,8 @@ const FAQ = () => {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category.id
-                      ? 'bg-blue-600 text-white shadow-lg transform scale-105'
-                      : 'bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-600'
+                      ? 'bg-[#F26C45] text-white shadow-lg transform scale-105'
+                      : 'bg-gray-100 text-gray-600 hover:bg-[#F26C45]/10 hover:text-[#F26C45]'
                   }`}
                 >
                   <category.icon size={16} />
@@ -194,7 +194,7 @@ const FAQ = () => {
       </section>
 
       {/* FAQ List */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F4F8F6]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {filteredFAQs.length > 0 ? (
@@ -205,9 +205,9 @@ const FAQ = () => {
                       onClick={() => toggleItem(index)}
                       className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                     >
-                      <h3 className="text-lg font-bold text-gray-900 pr-4">{faq.question}</h3>
+                      <h3 className="text-lg font-bold text-[#1E4C4C] pr-4">{faq.question}</h3>
                       <ChevronDown 
-                        className={`text-blue-600 transition-transform duration-300 ${
+                        className={`text-[#F26C45] transition-transform duration-300 ${
                           openItems.has(index) ? 'rotate-180' : ''
                         }`} 
                         size={24} 
@@ -229,14 +229,14 @@ const FAQ = () => {
                 <div className="text-gray-400 mb-4">
                   <Search size={64} className="mx-auto" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">No questions found</h3>
+                <h3 className="text-2xl font-bold text-[#1E4C4C] mb-2">No questions found</h3>
                 <p className="text-gray-600 mb-6">Try adjusting your search terms or category filter.</p>
                 <button 
                   onClick={() => {
                     setSearchTerm('');
                     setSelectedCategory('all');
                   }}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors font-semibold"
+                  className="bg-[#F26C45] text-white px-6 py-3 rounded-full hover:bg-[#e55a3a] transition-colors font-semibold"
                 >
                   Clear Filters
                 </button>
@@ -250,51 +250,51 @@ const FAQ = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Still Have Questions?</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Still Have Questions?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our team is here to help. Contact us through any of these convenient methods for personalized assistance.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="bg-gradient-to-br from-[#F4F8F6] to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Phone className="text-white" size={36} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Call Us</h3>
+              <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4">Call Us</h3>
               <p className="text-gray-600 mb-6">Speak directly with our patient services team</p>
-              <div className="text-blue-600 font-bold text-lg mb-2">+1 (555) 123-4567</div>
+              <div className="text-[#F26C45] font-bold text-lg mb-2">+1 (555) 123-4567</div>
               <div className="text-gray-500 text-sm">Mon-Fri: 8AM-6PM</div>
             </div>
 
-            <div className="bg-gradient-to-br from-green-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2">
+            <div className="bg-gradient-to-br from-[#F4F8F6] to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2">
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Mail className="text-white" size={36} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Email Us</h3>
+              <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4">Email Us</h3>
               <p className="text-gray-600 mb-6">Send us your questions via email</p>
               <div className="text-green-600 font-bold text-lg mb-2">info@bigmedix.com</div>
               <div className="text-gray-500 text-sm">24-48 hour response</div>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2">
+            <div className="bg-gradient-to-br from-[#F4F8F6] to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2">
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Users className="text-white" size={36} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Patient Portal</h3>
+              <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4">Patient Portal</h3>
               <p className="text-gray-600 mb-6">Message your care team securely online</p>
               <button className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors font-semibold">
                 Login Portal
               </button>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2">
-              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="bg-gradient-to-br from-[#F4F8F6] to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Calendar className="text-white" size={36} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Schedule Visit</h3>
+              <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4">Schedule Visit</h3>
               <p className="text-gray-600 mb-6">Book an appointment to discuss in person</p>
-              <button className="bg-orange-600 text-white px-6 py-3 rounded-full hover:bg-orange-700 transition-colors font-semibold">
+              <button className="bg-[#F26C45] text-white px-6 py-3 rounded-full hover:bg-[#e55a3a] transition-colors font-semibold">
                 Book Now
               </button>
             </div>
@@ -303,10 +303,10 @@ const FAQ = () => {
       </section>
 
       {/* Popular Topics */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F4F8F6]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Popular Help Topics</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Popular Help Topics</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Quick links to our most frequently requested information and resources.
             </p>
@@ -318,7 +318,7 @@ const FAQ = () => {
                 title: 'Patient Portal Guide',
                 description: 'Learn how to access your medical records, test results, and communicate with your care team online.',
                 icon: Users,
-                color: 'from-blue-500 to-blue-600'
+                color: 'from-[#F26C45] to-[#e55a3a]'
               },
               {
                 title: 'Insurance Verification',
@@ -336,7 +336,7 @@ const FAQ = () => {
                 title: 'Payment Options',
                 description: 'Explore our flexible payment plans, financial assistance programs, and billing policies.',
                 icon: CreditCard,
-                color: 'from-orange-500 to-orange-600'
+                color: 'from-[#F26C45] to-[#e55a3a]'
               },
               {
                 title: 'Emergency Services',
@@ -355,7 +355,7 @@ const FAQ = () => {
                 <div className={`w-12 h-12 bg-gradient-to-br ${topic.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <topic.icon className="text-white" size={24} />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-bold text-[#1E4C4C] mb-3 group-hover:text-[#F26C45] transition-colors">
                   {topic.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
