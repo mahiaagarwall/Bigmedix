@@ -40,7 +40,7 @@ const Insurance = () => {
       description: 'Pay your bills securely online 24/7 with our patient portal',
       features: ['Credit/Debit Cards', 'Bank Transfer', 'Payment Plans', 'Auto-Pay Setup'],
       icon: CreditCard,
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-[#F26C45] to-[#e55a3a]'
     },
     {
       title: 'Payment Plans',
@@ -61,7 +61,7 @@ const Insurance = () => {
       description: 'Use your health savings accounts for medical expenses',
       features: ['Health Savings Account', 'Flexible Spending Account', 'Direct Billing', 'Receipt Provided'],
       icon: DollarSign,
-      color: 'from-orange-500 to-orange-600'
+      color: 'from-[#F26C45] to-[#e55a3a]'
     }
   ];
 
@@ -91,21 +91,21 @@ const Insurance = () => {
   return (
     <div className="pt-32">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-[#1E4C4C] via-[#1E4C4C] to-[#0f2626] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-64 h-64 bg-[#F26C45] rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Insurance &
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26C45] to-[#e55a3a] block">
                 Payment
               </span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
               We accept most major insurance plans and offer flexible payment options to make quality healthcare accessible and affordable for everyone.
             </p>
           </div>
@@ -116,40 +116,40 @@ const Insurance = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Insurance Verification</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Insurance Verification</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Before your visit, we'll verify your insurance coverage to help you understand your benefits and any potential out-of-pocket costs.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+            <div className="bg-gradient-to-br from-[#F4F8F6] to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-3xl flex items-center justify-center mx-auto mb-6">
                 <Phone className="text-white" size={36} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Call Us</h3>
+              <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4">Call Us</h3>
               <p className="text-gray-600 mb-6">Call our insurance verification team at +1 (555) 123-4567 to check your coverage before your appointment.</p>
-              <button className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors font-semibold">
+              <button className="bg-[#F26C45] text-white px-6 py-3 rounded-full hover:bg-[#e55a3a] transition-colors font-semibold">
                 Call Now
               </button>
             </div>
 
-            <div className="bg-gradient-to-br from-green-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center">
+            <div className="bg-gradient-to-br from-[#F4F8F6] to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
                 <FileText className="text-white" size={36} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Online Form</h3>
+              <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4">Online Form</h3>
               <p className="text-gray-600 mb-6">Submit your insurance information online and we'll verify your coverage and contact you with details.</p>
               <button className="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors font-semibold">
                 Submit Form
               </button>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center">
+            <div className="bg-gradient-to-br from-[#F4F8F6] to-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
                 <Shield className="text-white" size={36} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Bring Your Card</h3>
+              <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4">Bring Your Card</h3>
               <p className="text-gray-600 mb-6">Bring your insurance card to your appointment and we'll verify your coverage on the spot.</p>
               <button className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors font-semibold">
                 Learn More
@@ -160,10 +160,10 @@ const Insurance = () => {
       </section>
 
       {/* Accepted Insurance Plans */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F4F8F6]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Accepted Insurance Plans</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Accepted Insurance Plans</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We work with most major insurance providers to ensure you can access the care you need. If you don't see your plan listed, please contact us.
             </p>
@@ -172,14 +172,14 @@ const Insurance = () => {
           <div className="space-y-8">
             {insurancePlans.map((category, categoryIndex) => (
               <div key={categoryIndex} className="bg-white rounded-3xl shadow-lg overflow-hidden">
-                <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6">
+                <div className="bg-gradient-to-r from-[#F26C45] to-[#e55a3a] p-6">
                   <h3 className="text-2xl font-bold text-white">{category.category}</h3>
                 </div>
                 
                 <div className="p-8">
                   <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {category.plans.map((plan, planIndex) => (
-                      <div key={planIndex} className="flex items-start space-x-3 p-4 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors">
+                      <div key={planIndex} className="flex items-start space-x-3 p-4 bg-[#F4F8F6] rounded-2xl hover:bg-[#F26C45]/10 transition-colors">
                         <div className="mt-1">
                           {plan.accepted ? (
                             <CheckCircle className="text-green-600" size={20} />
@@ -188,7 +188,7 @@ const Insurance = () => {
                           )}
                         </div>
                         <div className="flex-1">
-                          <div className="font-bold text-gray-900 mb-1">{plan.name}</div>
+                          <div className="font-bold text-[#1E4C4C] mb-1">{plan.name}</div>
                           <div className="text-sm text-gray-600">{plan.notes}</div>
                         </div>
                       </div>
@@ -200,12 +200,12 @@ const Insurance = () => {
           </div>
 
           <div className="text-center mt-12">
-            <div className="bg-blue-50 rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Don't See Your Plan?</h3>
+            <div className="bg-[#F26C45]/10 rounded-2xl p-8 max-w-2xl mx-auto">
+              <h3 className="text-xl font-bold text-[#1E4C4C] mb-4">Don't See Your Plan?</h3>
               <p className="text-gray-600 mb-6">
                 Insurance plans change frequently. If you don't see your specific plan listed, please contact our insurance verification team to confirm coverage.
               </p>
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors font-semibold">
+              <button className="bg-[#F26C45] text-white px-8 py-3 rounded-full hover:bg-[#e55a3a] transition-colors font-semibold">
                 Contact Insurance Team
               </button>
             </div>
@@ -217,7 +217,7 @@ const Insurance = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Payment Options</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Payment Options</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We offer multiple convenient payment options and financial assistance programs to help make healthcare affordable for everyone.
             </p>
@@ -252,10 +252,10 @@ const Insurance = () => {
       </section>
 
       {/* Billing Process */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F4F8F6]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">How Billing Works</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">How Billing Works</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our streamlined billing process is designed to be transparent and hassle-free, so you can focus on your health.
             </p>
@@ -265,16 +265,16 @@ const Insurance = () => {
             {billingProcess.map((step, index) => (
               <div key={index} className="relative">
                 <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform">
                     {step.step}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                  <h3 className="text-xl font-bold text-[#1E4C4C] mb-4">{step.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{step.description}</p>
                 </div>
                 
                 {index < billingProcess.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                    <div className="w-8 h-0.5 bg-blue-300"></div>
+                    <div className="w-8 h-0.5 bg-[#F26C45]/30"></div>
                   </div>
                 )}
               </div>
@@ -284,11 +284,11 @@ const Insurance = () => {
       </section>
 
       {/* Financial Assistance */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Financial Assistance Programs</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-orange-100 max-w-3xl mx-auto">
               We believe everyone deserves access to quality healthcare. Our financial assistance programs help make care affordable for those who qualify.
             </p>
           </div>
@@ -299,8 +299,8 @@ const Insurance = () => {
                 <Shield className="text-white" size={32} />
               </div>
               <h3 className="text-2xl font-bold mb-4">Charity Care</h3>
-              <p className="text-blue-100 mb-6">Free or reduced-cost care for qualifying patients based on income and family size.</p>
-              <ul className="text-left text-blue-100 space-y-2">
+              <p className="text-orange-100 mb-6">Free or reduced-cost care for qualifying patients based on income and family size.</p>
+              <ul className="text-left text-orange-100 space-y-2">
                 <li>• Income-based eligibility</li>
                 <li>• Application assistance available</li>
                 <li>• Covers emergency and essential care</li>
@@ -313,8 +313,8 @@ const Insurance = () => {
                 <DollarSign className="text-white" size={32} />
               </div>
               <h3 className="text-2xl font-bold mb-4">Payment Plans</h3>
-              <p className="text-blue-100 mb-6">Interest-free payment plans to help you manage medical expenses over time.</p>
-              <ul className="text-left text-blue-100 space-y-2">
+              <p className="text-orange-100 mb-6">Interest-free payment plans to help you manage medical expenses over time.</p>
+              <ul className="text-left text-orange-100 space-y-2">
                 <li>• 0% interest options</li>
                 <li>• Flexible terms up to 24 months</li>
                 <li>• No credit check required</li>
@@ -327,8 +327,8 @@ const Insurance = () => {
                 <FileText className="text-white" size={32} />
               </div>
               <h3 className="text-2xl font-bold mb-4">Medicaid Assistance</h3>
-              <p className="text-blue-100 mb-6">Help with Medicaid applications and understanding your benefits and coverage options.</p>
-              <ul className="text-left text-blue-100 space-y-2">
+              <p className="text-orange-100 mb-6">Help with Medicaid applications and understanding your benefits and coverage options.</p>
+              <ul className="text-left text-orange-100 space-y-2">
                 <li>• Application assistance</li>
                 <li>• Eligibility screening</li>
                 <li>• Benefits explanation</li>
@@ -338,7 +338,7 @@ const Insurance = () => {
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-blue-50 transition-colors font-bold shadow-xl hover:shadow-2xl transform hover:scale-105">
+            <button className="bg-white text-[#F26C45] px-8 py-4 rounded-full hover:bg-gray-100 transition-colors font-bold shadow-xl hover:shadow-2xl transform hover:scale-105">
               Apply for Financial Assistance
             </button>
           </div>
@@ -349,37 +349,37 @@ const Insurance = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Questions About Billing or Insurance?</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Questions About Billing or Insurance?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our patient financial services team is here to help you understand your insurance benefits and payment options.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-gray-50 rounded-2xl p-6 text-center hover:bg-blue-50 transition-colors">
-              <Phone className="text-blue-600 mx-auto mb-4" size={32} />
-              <h3 className="font-bold text-gray-900 mb-2">Phone</h3>
+            <div className="bg-[#F4F8F6] rounded-2xl p-6 text-center hover:bg-[#F26C45]/10 transition-colors">
+              <Phone className="text-[#F26C45] mx-auto mb-4" size={32} />
+              <h3 className="font-bold text-[#1E4C4C] mb-2">Phone</h3>
               <p className="text-gray-600">+1 (555) 123-4567</p>
               <p className="text-sm text-gray-500">Mon-Fri: 8AM-5PM</p>
             </div>
 
-            <div className="bg-gray-50 rounded-2xl p-6 text-center hover:bg-blue-50 transition-colors">
+            <div className="bg-[#F4F8F6] rounded-2xl p-6 text-center hover:bg-[#F26C45]/10 transition-colors">
               <FileText className="text-green-600 mx-auto mb-4" size={32} />
-              <h3 className="font-bold text-gray-900 mb-2">Email</h3>
+              <h3 className="font-bold text-[#1E4C4C] mb-2">Email</h3>
               <p className="text-gray-600">billing@bigmedix.com</p>
               <p className="text-sm text-gray-500">24-48 hour response</p>
             </div>
 
-            <div className="bg-gray-50 rounded-2xl p-6 text-center hover:bg-blue-50 transition-colors">
+            <div className="bg-[#F4F8F6] rounded-2xl p-6 text-center hover:bg-[#F26C45]/10 transition-colors">
               <CreditCard className="text-purple-600 mx-auto mb-4" size={32} />
-              <h3 className="font-bold text-gray-900 mb-2">Online Portal</h3>
+              <h3 className="font-bold text-[#1E4C4C] mb-2">Online Portal</h3>
               <p className="text-gray-600">Pay bills online</p>
               <p className="text-sm text-gray-500">Available 24/7</p>
             </div>
 
-            <div className="bg-gray-50 rounded-2xl p-6 text-center hover:bg-blue-50 transition-colors">
-              <Shield className="text-orange-600 mx-auto mb-4" size={32} />
-              <h3 className="font-bold text-gray-900 mb-2">In Person</h3>
+            <div className="bg-[#F4F8F6] rounded-2xl p-6 text-center hover:bg-[#F26C45]/10 transition-colors">
+              <Shield className="text-[#F26C45] mx-auto mb-4" size={32} />
+              <h3 className="font-bold text-[#1E4C4C] mb-2">In Person</h3>
               <p className="text-gray-600">Visit any location</p>
               <p className="text-sm text-gray-500">Business hours</p>
             </div>

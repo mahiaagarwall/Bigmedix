@@ -158,7 +158,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Link 
               to="/contact"
-              className="btn-animate bg-[#F26C45] text-white px-6 py-3 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="btn-animate bg-[#F26C45] text-white px-6 py-3 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
             >
               Book Appointment
             </Link>

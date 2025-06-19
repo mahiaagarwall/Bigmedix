@@ -19,6 +19,13 @@ const Contact = () => {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+    // You can add form submission logic here
+  };
+
   return (
     <section id="contact" className="py-20 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
@@ -84,7 +91,7 @@ const Contact = () => {
                 <h3 className="text-3xl font-bold text-[#1E4C4C]">Book an Appointment</h3>
               </div>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="group">
                     <label className="block text-sm font-bold text-gray-700 mb-3">First Name</label>
@@ -95,6 +102,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your first name"
+                      required
                     />
                   </div>
                   <div className="group">
@@ -106,6 +114,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your last name"
+                      required
                     />
                   </div>
                 </div>
@@ -120,6 +129,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your email address"
+                      required
                     />
                   </div>
                   <div className="group">
@@ -180,7 +190,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full btn-animate bg-[#F26C45] text-white py-4 rounded-xl hover:bg-[#e55a3a] transition-all duration-300 font-bold flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="w-full btn-animate bg-[#F26C45] text-white py-4 rounded-xl hover:bg-[#e55a3a] transition-all duration-300 font-bold flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
                 >
                   <Send size={24} />
                   <span>Book Appointment</span>

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Award, Users, Clock, MapPin, CheckCircle, Play } from 'lucide-react';
 
 const About = () => {
@@ -115,9 +116,12 @@ const About = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="btn-animate bg-[#F26C45] text-white px-8 py-4 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
+              <Link 
+                to="/about"
+                className="btn-animate bg-[#F26C45] text-white px-8 py-4 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 text-center cursor-pointer"
+              >
                 Learn More About Us
-              </button>
+              </Link>
               
               <button className="group flex items-center space-x-3 text-[#1E4C4C] hover:text-[#F26C45] transition-all duration-300 font-semibold px-4">
                 <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-[#F26C45]/10 transition-all duration-300 group-hover:scale-110 shadow-md">

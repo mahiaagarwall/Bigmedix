@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Award, Users, Clock, Play } from 'lucide-react';
 
 const Hero = () => {
@@ -7,6 +8,13 @@ const Hero = () => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="home" className="relative min-h-screen bg-gradient-to-br from-[#F4F8F6] via-[#F4F8F6] to-white overflow-hidden pt-20">
@@ -43,10 +51,13 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 animate-slideInUp">
-              <button className="group btn-animate bg-[#F26C45] text-white px-8 py-4 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl transform hover:scale-105">
+              <Link 
+                to="/contact"
+                className="group btn-animate bg-[#F26C45] text-white px-8 py-4 rounded-full hover:bg-[#e55a3a] transition-all duration-300 font-semibold flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
+              >
                 <span>Book Appointment</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
               
               <button className="group flex items-center space-x-3 text-[#1E4C4C] hover:text-[#F26C45] transition-all duration-300 font-semibold px-4">
                 <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-[#F26C45]/10 transition-all duration-300 group-hover:scale-110 shadow-md">
