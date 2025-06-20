@@ -1,16 +1,17 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import mysql.connector
+import psycopg2
 
 app = Flask(__name__)
 CORS(app)
 
-# ✅ Configure your MySQL connection
+# PostgreSQL connection config
 db_config = {
-    'host': 'localhost',
-    'user': 'root',
+    'dbname': 'bigmedix',
+    'user': 'postgres',
     'password': '12345',
-    'database': 'bigmedix'
+    'host': 'localhost',
+    'port': '5432'
 }
 
 @app.route("/api/contact", methods=["POST"])
@@ -19,11 +20,13 @@ def contact():
     print("Form Data Received:", data)
 
     try:
-        connection = mysql.connector.connect(**db_config)
-        cursor = connection.cursor()
+        conn = psycopg2.connect(**db_config)
+        cursor = conn.cursor()
 
-        # Sample insert (you should match this to your table columns)
-        query = "INSERT INTO contact_form (first_name, last_name, email, phone, message) VALUES (%s, %s, %s, %s, %s)"
+        query = """
+        INSERT INTO contact_form (first_name, last_name, email, phone, message)
+        VALUES (%s, %s, %s, %s, %s)
+        """
         values = (
             data.get("firstName"),
             data.get("lastName"),
@@ -31,18 +34,19 @@ def contact():
             data.get("phone"),
             data.get("message")
         )
+
         cursor.execute(query, values)
-        connection.commit()
+        conn.commit()
 
-        return jsonify({"status": "success", "message": "Data saved to database"})
+        return jsonify({"status": "success", "message": "Data saved to PostgreSQL"})
 
-    except mysql.connector.Error as err:
-        print("Database Error:", err)
-        return jsonify({"status": "error", "message": str(err)})
+    except Exception as e:
+        print("Database Error:", e)
+        return jsonify({"status": "error", "message": str(e)})
 
     finally:
-        if connection.is_connected():
-            cursor.close()
-            connection.close()
+        cursor.close()
+        conn.close()
+
 if __name__ == "__main__":
     app.run(debug=True)
