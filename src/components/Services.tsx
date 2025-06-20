@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Heart, Brain, Eye, Bone, Baby, Stethoscope, Activity, Shield, ArrowRight, Plus } from 'lucide-react';
 
 const Services = () => {
@@ -149,7 +150,10 @@ const Services = () => {
 
         {/* See All Services Card */}
         <div className="mt-8 flex justify-center">
-          <div className="group bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer card-hover text-center text-white max-w-sm">
+          <Link 
+            to="/services"
+            className="group bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer card-hover text-center text-white max-w-sm"
+          >
             <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-all duration-300">
               <Plus className="text-white" size={32} />
             </div>
@@ -162,11 +166,11 @@ const Services = () => {
               Explore our complete range of medical specialties and healthcare services.
             </p>
 
-            <button className="flex items-center space-x-2 text-white font-semibold mx-auto group-hover:translate-x-1 transition-transform text-sm">
+            <div className="flex items-center space-x-2 text-white font-semibold mx-auto group-hover:translate-x-1 transition-transform text-sm justify-center">
               <span>See All Services</span>
               <ArrowRight size={14} />
-            </button>
-          </div>
+            </div>
+          </Link>
         </div>
       </div>
     </section>

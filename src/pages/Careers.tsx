@@ -152,7 +152,7 @@ const Careers = () => {
       icon: GraduationCap,
       title: 'Professional Development',
       description: 'Continuing education support and career advancement opportunities',
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-[#F26C45] to-[#e55a3a]'
     },
     {
       icon: Clock,
@@ -165,21 +165,21 @@ const Careers = () => {
   return (
     <div className="pt-32">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-[#1E4C4C] via-[#1E4C4C] to-[#0f2626] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-64 h-64 bg-[#F26C45] rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Join Our
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26C45] to-[#e55a3a] block">
                 Healthcare Team
               </span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
               Build a rewarding career in healthcare with BigMedix. We're looking for passionate professionals who share our commitment to exceptional patient care and medical excellence.
             </p>
           </div>
@@ -190,7 +190,7 @@ const Careers = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Why Choose BigMedix?</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Why Choose BigMedix?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Join a team that values innovation, collaboration, and making a real difference in patients' lives every day.
             </p>
@@ -202,7 +202,7 @@ const Careers = () => {
                 <div className={`w-20 h-20 bg-gradient-to-br ${benefit.color} rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <benefit.icon className="text-white" size={36} />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
+                <h3 className="text-xl font-bold text-[#1E4C4C] mb-4">{benefit.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
               </div>
             ))}
@@ -211,7 +211,7 @@ const Careers = () => {
       </section>
 
       {/* Search and Filter */}
-      <section className="py-12 bg-gray-50 border-b">
+      <section className="py-12 bg-[#F4F8F6] border-b">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -222,7 +222,7 @@ const Careers = () => {
                   placeholder="Search job titles, keywords..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300"
+                  className="w-full pl-12 pr-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300"
                 />
               </div>
               
@@ -231,7 +231,7 @@ const Careers = () => {
                 <select
                   value={selectedDepartment}
                   onChange={(e) => setSelectedDepartment(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 appearance-none"
+                  className="w-full pl-12 pr-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 appearance-none"
                 >
                   {departments.map(dept => (
                     <option key={dept} value={dept}>
@@ -246,7 +246,7 @@ const Careers = () => {
                 <select
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 appearance-none"
+                  className="w-full pl-12 pr-4 py-3 rounded-2xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 appearance-none"
                 >
                   {jobTypes.map(type => (
                     <option key={type} value={type}>
@@ -267,7 +267,7 @@ const Careers = () => {
       </section>
 
       {/* Job Listings */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F4F8F6]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {filteredJobs.length > 0 ? (
@@ -278,12 +278,12 @@ const Careers = () => {
                       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                         <div className="flex-1">
                           <div className="flex items-center space-x-3 mb-2">
-                            <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                            <h3 className="text-2xl font-bold text-[#1E4C4C] group-hover:text-[#F26C45] transition-colors">
                               {job.title}
                             </h3>
                             <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                               job.type === 'Full-time' ? 'bg-green-100 text-green-600' :
-                              job.type === 'Part-time' ? 'bg-blue-100 text-blue-600' :
+                              job.type === 'Part-time' ? 'bg-[#F26C45]/10 text-[#F26C45]' :
                               'bg-purple-100 text-purple-600'
                             }`}>
                               {job.type}
@@ -311,10 +311,10 @@ const Careers = () => {
                         </div>
                         
                         <div className="flex flex-col sm:flex-row gap-3">
-                          <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
+                          <button className="bg-gradient-to-r from-[#F26C45] to-[#e55a3a] text-white px-6 py-3 rounded-full hover:from-[#e55a3a] hover:to-[#d14d2f] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
                             Apply Now
                           </button>
-                          <button className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-50 transition-all duration-300 font-semibold">
+                          <button className="border-2 border-[#F26C45] text-[#F26C45] px-6 py-3 rounded-full hover:bg-[#F26C45]/10 transition-all duration-300 font-semibold">
                             Learn More
                           </button>
                         </div>
@@ -326,11 +326,11 @@ const Careers = () => {
                       
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
-                          <h4 className="font-bold text-gray-900 mb-3">Requirements:</h4>
+                          <h4 className="font-bold text-[#1E4C4C] mb-3">Requirements:</h4>
                           <ul className="space-y-1">
                             {job.requirements.map((req, index) => (
                               <li key={index} className="flex items-center text-sm text-gray-600">
-                                <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                                <div className="w-2 h-2 bg-[#F26C45] rounded-full mr-3"></div>
                                 {req}
                               </li>
                             ))}
@@ -338,10 +338,10 @@ const Careers = () => {
                         </div>
                         
                         <div>
-                          <h4 className="font-bold text-gray-900 mb-3">Benefits:</h4>
+                          <h4 className="font-bold text-[#1E4C4C] mb-3">Benefits:</h4>
                           <div className="flex flex-wrap gap-2">
                             {job.benefits.map((benefit, index) => (
-                              <span key={index} className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
+                              <span key={index} className="bg-[#F26C45]/10 text-[#F26C45] px-3 py-1 rounded-full text-sm font-medium">
                                 {benefit}
                               </span>
                             ))}
@@ -366,7 +366,7 @@ const Careers = () => {
                 <div className="text-gray-400 mb-4">
                   <Briefcase size={64} className="mx-auto" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">No positions found</h3>
+                <h3 className="text-2xl font-bold text-[#1E4C4C] mb-2">No positions found</h3>
                 <p className="text-gray-600 mb-6">Try adjusting your search criteria or check back later for new openings.</p>
                 <button 
                   onClick={() => {
@@ -374,7 +374,7 @@ const Careers = () => {
                     setSelectedDepartment('all');
                     setSelectedType('all');
                   }}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors font-semibold"
+                  className="bg-[#F26C45] text-white px-6 py-3 rounded-full hover:bg-[#e55a3a] transition-colors font-semibold"
                 >
                   Clear Filters
                 </button>
@@ -388,7 +388,7 @@ const Careers = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">What Our Team Says</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">What Our Team Says</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Hear from our employees about their experience working at BigMedix and why they love being part of our healthcare family.
             </p>
@@ -415,15 +415,15 @@ const Careers = () => {
                 quote: 'Working at BigMedix means having access to the latest technology and treatment methods. I can provide the best possible care to my patients while continuing to learn and grow professionally.'
               }
             ].map((testimonial, index) => (
-              <div key={index} className="bg-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+              <div key={index} className="bg-[#F4F8F6] rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
                 <div className="text-center mb-6">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="w-20 h-20 rounded-full object-cover mx-auto mb-4 border-4 border-white shadow-lg"
                   />
-                  <h3 className="text-xl font-bold text-gray-900">{testimonial.name}</h3>
-                  <div className="text-blue-600 font-medium">{testimonial.position}</div>
+                  <h3 className="text-xl font-bold text-[#1E4C4C]">{testimonial.name}</h3>
+                  <div className="text-[#F26C45] font-medium">{testimonial.position}</div>
                 </div>
                 
                 <blockquote className="text-gray-600 leading-relaxed italic">
@@ -436,10 +436,10 @@ const Careers = () => {
       </section>
 
       {/* Application Process */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F4F8F6]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Application Process</h2>
+            <h2 className="text-4xl font-bold text-[#1E4C4C] mb-6">Application Process</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our streamlined application process is designed to be simple and efficient while ensuring we find the best candidates for our team.
             </p>
@@ -469,10 +469,10 @@ const Careers = () => {
               }
             ].map((step, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold shadow-lg">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                <h3 className="text-xl font-bold text-[#1E4C4C] mb-4">{step.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{step.description}</p>
               </div>
             ))}
@@ -481,15 +481,15 @@ const Careers = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-[#F26C45] to-[#e55a3a] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Start Your Career with Us?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
             Join our team of healthcare professionals dedicated to making a difference in patients' lives every day.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full hover:from-orange-600 hover:to-red-600 transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105">
+            <button className="bg-white text-[#F26C45] px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105">
               View All Openings
             </button>
             <button className="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold border border-white/30">

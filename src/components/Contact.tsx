@@ -51,6 +51,13 @@ const response = await fetch(`${API_URL}/api/contact`, {
 };
 
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+    // You can add form submission logic here
+  };
+
   return (
     <section id="contact" className="py-20 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
@@ -115,8 +122,8 @@ const response = await fetch(`${API_URL}/api/contact`, {
                 <Calendar className="text-[#F26C45] mr-4" size={32} />
                 <h3 className="text-3xl font-bold text-[#1E4C4C]">Book an Appointment</h3>
               </div>
-              
-              <form className="space-y-6" onSubmit={handleSubmit}>
+             
+               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="group">
                     <label className="block text-sm font-bold text-gray-700 mb-3">First Name</label>
@@ -127,6 +134,7 @@ const response = await fetch(`${API_URL}/api/contact`, {
                       onChange={handleInputChange}
                       className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your first name"
+                      required
                     />
                   </div>
                   <div className="group">
@@ -138,6 +146,7 @@ const response = await fetch(`${API_URL}/api/contact`, {
                       onChange={handleInputChange}
                       className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your last name"
+                      required
                     />
                   </div>
                 </div>
@@ -152,6 +161,7 @@ const response = await fetch(`${API_URL}/api/contact`, {
                       onChange={handleInputChange}
                       className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300 group-hover:border-gray-300"
                       placeholder="Enter your email address"
+                      required
                     />
                   </div>
                   <div className="group">
@@ -212,7 +222,7 @@ const response = await fetch(`${API_URL}/api/contact`, {
 
                 <button
                   type="submit"
-                  className="w-full btn-animate bg-[#F26C45] text-white py-4 rounded-xl hover:bg-[#e55a3a] transition-all duration-300 font-bold flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="w-full btn-animate bg-[#F26C45] text-white py-4 rounded-xl hover:bg-[#e55a3a] transition-all duration-300 font-bold flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
                 >
                   <Send size={24} />
                   <span>Book Appointment</span>

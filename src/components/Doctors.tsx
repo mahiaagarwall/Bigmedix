@@ -30,7 +30,7 @@ const Doctors = () => {
       experience: '15 years',
       rating: 4.9,
       reviews: 127,
-      image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       education: 'Harvard Medical School',
       location: 'Main Campus',
       specialties: ['Heart Surgery', 'Interventional Cardiology', 'Preventive Cardiology']
@@ -41,7 +41,7 @@ const Doctors = () => {
       experience: '12 years',
       rating: 4.8,
       reviews: 98,
-      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       education: 'Johns Hopkins University',
       location: 'Downtown Center',
       specialties: ['Stroke Treatment', 'Epilepsy', 'Movement Disorders']
@@ -52,7 +52,7 @@ const Doctors = () => {
       experience: '10 years',
       rating: 4.9,
       reviews: 156,
-      image: 'https://images.unsplash.com/photo-1594824475317-d3c2b8b7b3b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1594824475317-d3c2b8b7b3b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       education: 'Stanford Medical School',
       location: 'Family Care Unit',
       specialties: ['Child Development', 'Pediatric Surgery', 'Neonatal Care']
@@ -63,7 +63,7 @@ const Doctors = () => {
       experience: '18 years',
       rating: 4.7,
       reviews: 89,
-      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       education: 'Mayo Clinic',
       location: 'Surgical Center',
       specialties: ['Joint Replacement', 'Sports Medicine', 'Spine Surgery']

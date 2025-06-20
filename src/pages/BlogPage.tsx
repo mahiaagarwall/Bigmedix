@@ -16,7 +16,7 @@ const BlogPage = () => {
       date: '2024-01-15',
       readTime: '5 min read',
       category: 'Cardiology',
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       featured: true
     },
     {
@@ -28,7 +28,7 @@ const BlogPage = () => {
       date: '2024-01-12',
       readTime: '7 min read',
       category: 'Pediatrics',
-      image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       featured: false
     },
     {
@@ -40,7 +40,7 @@ const BlogPage = () => {
       date: '2024-01-10',
       readTime: '6 min read',
       category: 'Mental Health',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       featured: false
     },
     {
@@ -52,7 +52,7 @@ const BlogPage = () => {
       date: '2024-01-08',
       readTime: '8 min read',
       category: 'Orthopedics',
-      image: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       featured: false
     },
     {
@@ -64,7 +64,7 @@ const BlogPage = () => {
       date: '2024-01-05',
       readTime: '10 min read',
       category: 'Internal Medicine',
-      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       featured: false
     },
     {
@@ -76,7 +76,7 @@ const BlogPage = () => {
       date: '2024-01-03',
       readTime: '6 min read',
       category: 'Women\'s Health',
-      image: 'https://images.unsplash.com/photo-1594824475317-d3c2b8b7b3b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1594824475317-d3c2b8b7b3b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       featured: false
     }
   ];
@@ -96,21 +96,22 @@ const BlogPage = () => {
   return (
     <div className="pt-32">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-[#1E4C4C] via-[#1E4C4C] to-[#0f2626] text-white relative overflow-hidden">
+        <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-64 h-64 bg-orange-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-64 h-64 bg-[#F26C45] rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
               Health
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26C45] to-[#e55a3a] block">
                 Blog
               </span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
               Stay informed with the latest healthcare insights, medical breakthroughs, and wellness tips from our expert medical team.
             </p>
           </div>
@@ -118,8 +119,9 @@ const BlogPage = () => {
       </section>
 
       {/* Search and Filter */}
-      <section className="py-12 bg-white border-b">
-        <div className="container mx-auto px-4">
+      <section className="py-12 bg-[#F4F8F6] border-b relative overflow-hidden">
+        <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
@@ -128,7 +130,7 @@ const BlogPage = () => {
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 rounded-full border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300"
+                className="w-full pl-12 pr-4 py-3 rounded-full border-2 border-gray-200 focus:border-[#F26C45] focus:ring-4 focus:ring-[#F26C45]/10 outline-none transition-all duration-300"
               />
             </div>
             
@@ -139,8 +141,8 @@ const BlogPage = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-600'
+                      ? 'bg-[#F26C45] text-white shadow-lg'
+                      : 'bg-white text-gray-600 hover:bg-[#F26C45]/10 hover:text-[#F26C45] shadow-sm'
                   }`}
                 >
                   {category === 'all' ? 'All Categories' : category}
@@ -153,15 +155,15 @@ const BlogPage = () => {
 
       {/* Featured Article */}
       {featuredPost && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="mb-8">
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+              <span className="bg-gradient-to-r from-[#F26C45] to-[#e55a3a] text-white px-4 py-2 rounded-full text-sm font-semibold">
                 Featured Article
               </span>
             </div>
             
-            <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 card-hover">
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="relative overflow-hidden">
                   <img
@@ -171,7 +173,7 @@ const BlogPage = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-[#F26C45] text-white px-3 py-1 rounded-full text-sm font-medium">
                       {featuredPost.category}
                     </span>
                   </div>
@@ -193,7 +195,7 @@ const BlogPage = () => {
                     </div>
                   </div>
                   
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                  <h2 className="text-3xl font-bold text-[#1E4C4C] mb-4 leading-tight">
                     {featuredPost.title}
                   </h2>
                   
@@ -203,7 +205,7 @@ const BlogPage = () => {
                   
                   <Link
                     to={`/blog/${featuredPost.slug}`}
-                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 w-fit"
+                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#F26C45] to-[#e55a3a] text-white px-6 py-3 rounded-full hover:from-[#e55a3a] hover:to-[#d14d2f] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 w-fit"
                   >
                     <span>Read Full Article</span>
                     <ArrowRight size={20} />
@@ -216,11 +218,12 @@ const BlogPage = () => {
       )}
 
       {/* Blog Grid */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-[#F4F8F6] relative overflow-hidden">
+        <div className="absolute inset-0 hexagon-pattern opacity-20"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regularPosts.map((post) => (
-              <article key={post.id} className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:-translate-y-2">
+              <article key={post.id} className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:-translate-y-2 card-hover">
                 <div className="relative overflow-hidden">
                   <img
                     src={post.image}
@@ -229,7 +232,7 @@ const BlogPage = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-[#F26C45] text-white px-3 py-1 rounded-full text-sm font-medium">
                       {post.category}
                     </span>
                   </div>
@@ -247,7 +250,7 @@ const BlogPage = () => {
                     </div>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-bold text-[#1E4C4C] mb-3 leading-tight group-hover:text-[#F26C45] transition-colors">
                     {post.title}
                   </h3>
                   
@@ -263,7 +266,7 @@ const BlogPage = () => {
                     
                     <Link
                       to={`/blog/${post.slug}`}
-                      className="inline-flex items-center space-x-1 text-blue-600 hover:text-orange-500 transition-colors font-medium text-sm"
+                      className="inline-flex items-center space-x-1 text-[#F26C45] hover:text-[#e55a3a] transition-colors font-medium text-sm"
                     >
                       <span>Read More</span>
                       <ArrowRight size={16} />
@@ -279,7 +282,7 @@ const BlogPage = () => {
               <div className="text-gray-400 mb-4">
                 <Search size={64} className="mx-auto" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">No articles found</h3>
+              <h3 className="text-2xl font-bold text-[#1E4C4C] mb-2">No articles found</h3>
               <p className="text-gray-600">Try adjusting your search terms or category filter.</p>
             </div>
           )}
@@ -287,10 +290,10 @@ const BlogPage = () => {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-[#1E4C4C] to-[#0f2626] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Stay Updated with Health Tips</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
             Subscribe to our newsletter for the latest health insights, medical breakthroughs, and wellness tips delivered to your inbox.
           </p>
           
@@ -298,10 +301,11 @@ const BlogPage = () => {
             <input
               type="email"
               placeholder="Enter your email address"
-              className="flex-1 px-6 py-4 rounded-full text-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-300"
+              className="flex-1 px-6 py-4 rounded-full text-gray-900 focus:outline-none focus:ring-4 focus:ring-[#F26C45]/30"
             />
-            <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full hover:from-orange-600 hover:to-red-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
-              Subscribe
+            <button className="bg-gradient-to-r from-[#F26C45] to-[#e55a3a] text-white px-8 py-4 rounded-full hover:from-[#e55a3a] hover:to-[#d14d2f] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center space-x-2">
+              <span>Subscribe</span>
+              <ArrowRight size={16} />
             </button>
           </div>
         </div>
