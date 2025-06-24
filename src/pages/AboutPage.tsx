@@ -23,6 +23,17 @@ const AboutPage = () => {
 
     return () => observer.disconnect();
   }, []);
+  
+  const [teamMembers, setTeamMembers] = useState([]);
+
+useEffect(() => {
+  fetch("http://localhost:5000/api/leadership")
+    .then((res) => res.json())
+    .then((data) => setTeamMembers(data))
+    .catch((err) => console.error("Failed to fetch leadership:", err));
+}, []);
+
+ 
 
   const animateCounters = () => {
     const targets = { years: 25, doctors: 50, patients: 15000, locations: 5 };
@@ -48,45 +59,6 @@ const AboutPage = () => {
       }
     }, stepDuration);
   };
-
-  const teamMembers = [
-    {
-      name: 'Dr. Sarah Johnson',
-      position: 'Chief Medical Officer',
-      specialty: 'Cardiology',
-      experience: '15 years',
-      education: 'Harvard Medical School',
-      image: 'https://images.unsplash.com/photo-5559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      bio: 'Dr. Johnson leads our medical team with expertise in cardiovascular medicine and a passion for patient-centered care.'
-    },
-    {
-      name: 'Dr. Michael Chen',
-      position: 'Director of Neurology',
-      specialty: 'Neurology',
-      experience: '12 years',
-      education: 'Johns Hopkins University',
-      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      bio: 'Specializing in neurological disorders, Dr. Chen brings cutting-edge treatment approaches to complex cases.'
-    },
-    {
-      name: 'Dr. Emily Davis',
-      position: 'Head of Pediatrics',
-      specialty: 'Pediatrics',
-      experience: '10 years',
-      education: 'Stanford Medical School',
-      image: 'https://images.unsplash.com/photo-1594824475317-d3c2b8b7b3b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      bio: 'Dr. Davis is dedicated to providing comprehensive healthcare for children in a compassionate environment.'
-    },
-    {
-      name: 'Dr. Robert Wilson',
-      position: 'Chief of Surgery',
-      specialty: 'Orthopedic Surgery',
-      experience: '18 years',
-      education: 'Mayo Clinic',
-      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      bio: 'With extensive surgical experience, Dr. Wilson specializes in complex orthopedic procedures and joint replacements.'
-    }
-  ];
 
   const coreValues = [
     {
@@ -115,29 +87,15 @@ const AboutPage = () => {
     }
   ];
 
-  const locations = [
-    {
-      name: 'Main Medical Center',
-      address: '123 Medical Plaza, Health City, HC 12345',
-      phone: '+1 (555) 123-4567',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      services: ['Emergency Care', 'Surgery', 'Cardiology', 'Neurology']
-    },
-    {
-      name: 'Downtown Clinic',
-      address: '456 Downtown Ave, Health City, HC 12346',
-      phone: '+1 (555) 234-5678',
-      image: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      services: ['Family Medicine', 'Pediatrics', 'Preventive Care']
-    },
-    {
-      name: 'Westside Family Center',
-      address: '789 Westside Blvd, Health City, HC 12347',
-      phone: '+1 (555) 345-6789',
-      image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      services: ['Women\'s Health', 'Obstetrics', 'Gynecology']
-    }
-  ];
+  const [locations, setLocations] = useState([]);
+
+useEffect(() => {
+  fetch("http://localhost:5000/api/location")
+    .then((res) => res.json())
+    .then((data) => setLocations(data))
+    .catch((err) => console.error("Failed to fetch locations:", err));
+}, []);
+
 
   return (
     <div className="pt-32">
@@ -265,29 +223,31 @@ const AboutPage = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:-translate-y-2 card-hover">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={`${member.name} - ${member.position}`}
-                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <div className="text-sm font-medium">{member.specialty}</div>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#1E4C4C] mb-2 group-hover:text-[#F26C45] transition-colors">{member.name}</h3>
-                  <div className="text-[#F26C45] font-medium mb-2">{member.position}</div>
-                  <div className="text-sm text-gray-600 mb-3">
-                    {member.experience} • {member.education}
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
-                </div>
-              </div>
-            ))}
+  <div
+    key={index}
+    className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group hover:-translate-y-2 card-hover"
+  >
+    <div className="relative overflow-hidden">
+      <img
+        src={member.image_url}
+        alt={`${member.name} - ${member.role}`}
+        className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+    </div>
+
+    <div className="p-6">
+      <h3 className="text-xl font-bold text-[#1E4C4C] mb-2 group-hover:text-[#F26C45] transition-colors">
+        {member.name}
+      </h3>
+      <div className="text-[#F26C45] font-medium mb-2">{member.role}</div>
+      <p className="text-gray-600 text-sm leading-relaxed">
+        {member.description}
+      </p>
+    </div>
+  </div>
+))}
+
           </div>
         </div>
       </section>

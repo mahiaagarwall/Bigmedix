@@ -5,6 +5,8 @@ const DoctorsPage = () => {
   const [visibleItems, setVisibleItems] = useState(new Set());
   const [selectedSpecialty, setSelectedSpecialty] = useState('all');
   const observerRef = useRef();
+  const [doctors, setDoctors] = useState([]);
+
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -23,6 +25,18 @@ const DoctorsPage = () => {
 
     return () => observerRef.current?.disconnect();
   }, []);
+
+  useEffect(() => {
+  const fetchDoctors = async () => {
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+    const response = await fetch(`${API_URL}/api/doctors`);
+    const data = await response.json();
+    setDoctors(data);
+  };
+
+  fetchDoctors();
+}, []);
+
 
   const doctors = [
     {

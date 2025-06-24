@@ -51,13 +51,6 @@ const response = await fetch(`${API_URL}/api/contact`, {
 };
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can add form submission logic here
-  };
-
   return (
     <section id="contact" className="py-20 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
