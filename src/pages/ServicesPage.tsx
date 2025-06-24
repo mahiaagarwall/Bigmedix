@@ -1,118 +1,54 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Heart, Brain, Eye, Bone, Baby, Stethoscope, Activity, Shield, ArrowRight, CheckCircle, Clock, Award } from 'lucide-react';
 
+
+
 const ServicesPage = () => {
+  const [services, setServices] = useState([]);
   const [visibleItems, setVisibleItems] = useState(new Set());
   const observerRef = useRef();
 
   useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisibleItems(prev => new Set([...prev, entry.target.dataset.index]));
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+  if (services.length === 0) return; // wait until services are fetched
 
-    const elements = document.querySelectorAll('[data-animate="service"]');
-    elements.forEach(el => observerRef.current.observe(el));
+  observerRef.current = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVisibleItems((prev) => new Set([...prev, entry.target.dataset.index]));
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-    return () => observerRef.current?.disconnect();
-  }, []);
+  const elements = document.querySelectorAll('[data-animate="service"]');
+  elements.forEach((el) => observerRef.current.observe(el));
 
-  const services = [
-    {
-      icon: Heart,
-      title: 'Cardiology',
-      description: 'Comprehensive heart care with advanced diagnostic and treatment options for all cardiovascular conditions.',
-      image: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg',
-      features: ['ECG & Echocardiography', 'Cardiac Surgery', 'Heart Disease Prevention', 'Cardiac Rehabilitation'],
-      procedures: ['Angioplasty', 'Bypass Surgery', 'Pacemaker Implantation', 'Heart Valve Repair'],
-      color: 'from-red-500 to-pink-500',
-      specialists: 3,
-      emergencyAvailable: true
-    },
-    {
-      icon: Brain,
-      title: 'Neurology',
-      description: 'Expert neurological care for brain, spine, and nervous system disorders with cutting-edge technology.',
-      image: 'https://images.pexels.com/photos/4386476/pexels-photo-4386476.jpeg',
-      features: ['MRI & CT Imaging', 'Stroke Treatment', 'Memory Disorders', 'Epilepsy Management'],
-      procedures: ['Brain Surgery', 'Spinal Procedures', 'Deep Brain Stimulation', 'Nerve Blocks'],
-      color: 'from-purple-500 to-indigo-500',
-      specialists: 2,
-      emergencyAvailable: true
-    },
-    {
-      icon: Eye,
-      title: 'Ophthalmology',
-      description: 'Complete eye care services from routine exams to complex surgical procedures for optimal vision health.',
-      image: 'https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg',
-      features: ['LASIK Surgery', 'Cataract Treatment', 'Retinal Disorders', 'Glaucoma Management'],
-      procedures: ['Cataract Surgery', 'Retinal Detachment Repair', 'Corneal Transplant', 'Laser Eye Surgery'],
-      color: 'from-blue-500 to-cyan-500',
-      specialists: 2,
-      emergencyAvailable: false
-    },
-    {
-      icon: Bone,
-      title: 'Orthopedics',
-      description: 'Advanced bone, joint, and muscle care with minimally invasive surgical techniques and rehabilitation.',
-      image: 'https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg',
-      features: ['Joint Replacement', 'Sports Medicine', 'Fracture Treatment', 'Physical Therapy'],
-      procedures: ['Hip Replacement', 'Knee Replacement', 'Arthroscopy', 'Spine Surgery'],
-      color: 'from-green-500 to-emerald-500',
-      specialists: 4,
-      emergencyAvailable: true
-    },
-    {
-      icon: Baby,
-      title: 'Pediatrics',
-      description: 'Specialized healthcare for infants, children, and adolescents in a child-friendly environment.',
-      image: 'https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg',
-      features: ['Well-Child Visits', 'Immunizations', 'Growth Monitoring', 'Developmental Assessments'],
-      procedures: ['Pediatric Surgery', 'Allergy Testing', 'Behavioral Therapy', 'Nutrition Counseling'],
-      color: 'from-yellow-500 to-orange-500',
-      specialists: 3,
-      emergencyAvailable: true
-    },
-    {
-      icon: Stethoscope,
-      title: 'Internal Medicine',
-      description: 'Comprehensive adult healthcare focusing on prevention, diagnosis, and treatment of internal diseases.',
-      image: 'https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg',
-      features: ['Annual Check-ups', 'Chronic Disease Management', 'Health Screenings', 'Preventive Care'],
-      procedures: ['Endoscopy', 'Colonoscopy', 'Biopsy', 'Chronic Care Management'],
-      color: 'from-teal-500 to-blue-500',
-      specialists: 5,
-      emergencyAvailable: false
-    },
-    {
-      icon: Activity,
-      title: 'Emergency Care',
-      description: '24/7 emergency medical services with rapid response times and state-of-the-art trauma care.',
-      image: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg',
-      features: ['Trauma Center', 'Critical Care Unit', 'Ambulance Services', 'Emergency Surgery'],
-      procedures: ['Emergency Surgery', 'Trauma Care', 'Critical Care', 'Life Support'],
-      color: 'from-red-500 to-orange-500',
-      specialists: 8,
-      emergencyAvailable: true
-    },
-    {
-      icon: Shield,
-      title: 'Preventive Care',
-      description: 'Proactive healthcare programs designed to prevent illness and maintain optimal health and wellness.',
-      image: 'https://images.pexels.com/photos/5327656/pexels-photo-5327656.jpeg',
-      features: ['Health Screenings', 'Wellness Programs', 'Lifestyle Counseling', 'Vaccination Services'],
-      procedures: ['Health Assessments', 'Cancer Screenings', 'Cardiac Risk Assessment', 'Wellness Coaching'],
-      color: 'from-indigo-500 to-purple-500',
-      specialists: 6,
-      emergencyAvailable: false
-    }
-  ];
+  return () => observerRef.current?.disconnect();
+}, [services]); // depend on services
+
+
+  useEffect(() => {
+  fetch("http://localhost:5000/api/services")
+    .then(res => res.json())
+    .then(data => setServices(data))
+    .catch(err => console.error("Error fetching services:", err));
+}, []);
+
+
+const iconMap = {
+  "Cardiology": Heart,
+  "Neurology": Brain,
+  "Ophthalmology": Eye,
+  "Orthopedics": Bone,
+  "Pediatrics": Baby,
+  "Internal Medicine": Stethoscope,
+  "Emergency Care": Activity,
+  "Preventive Care": Shield
+};
+
+
 
   return (
     <div className="pt-32">
@@ -156,7 +92,9 @@ const ServicesPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
+            {services.map((service, index) => {
+              const IconComponent = iconMap[service.title];
+              return(
               <div
                 key={index}
                 data-index={index}
@@ -169,7 +107,7 @@ const ServicesPage = () => {
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className={`w-20 h-20 bg-gradient-to-br ${service.color} rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
-                  <service.icon className="text-white" size={36} />
+                  {IconComponent && <IconComponent className="text-white" size={36} />}
                 </div>
                 
                 <h3 className="text-2xl font-bold text-[#1E4C4C] mb-4 group-hover:text-[#F26C45] transition-colors">
@@ -187,9 +125,9 @@ const ServicesPage = () => {
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-500">Emergency Care:</span>
-                    <span className={`font-bold ${service.emergencyAvailable ? 'text-green-600' : 'text-gray-400'}`}>
-                      {service.emergencyAvailable ? 'Available' : 'Not Available'}
-                    </span>
+                    <span className={`font-bold ${service.emergency_available ? 'text-green-600' : 'text-gray-400'}`}>
+  {service.emergency_available ? 'Available' : 'Not Available'}
+</span>
                   </div>
                 </div>
 
@@ -198,7 +136,8 @@ const ServicesPage = () => {
                   <ArrowRight size={16} />
                 </button>
               </div>
-            ))}
+            );
+})}
           </div>
         </div>
       </section>
@@ -207,12 +146,14 @@ const ServicesPage = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="space-y-20">
-            {services.slice(0, 4).map((service, index) => (
+            {services.slice(0, 4).map((service, index) => {
+              const IconComponent = iconMap[service.title] || Stethoscope;
+              return(
               <div key={index} className={`grid lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                 <div className={`space-y-8 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <div className="flex items-center space-x-4 mb-6">
                     <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center`}>
-                      <service.icon className="text-white" size={28} />
+                      {IconComponent && <IconComponent className="text-white" size={28} />}
                     </div>
                     <div>
                       <h3 className="text-3xl font-bold text-[#1E4C4C]">{service.title}</h3>
@@ -271,7 +212,7 @@ const ServicesPage = () => {
                 <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                   <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                     <img
-                      src={service.image}
+                      src={service.image_url}
                       alt={service.title}
                       className="w-full h-96 object-cover hover:scale-105 transition-transform duration-700"
                     />
@@ -292,7 +233,8 @@ const ServicesPage = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
@@ -327,15 +269,18 @@ const ServicesPage = () => {
                 title: 'Trauma Center',
                 description: 'Level II trauma center with specialized teams for complex emergency cases.'
               }
-            ].map((feature, index) => (
+            ].map((feature, index) =>{
+              const FeatureIcon = feature.icon;
+             return(
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="text-white" size={28} />
+                  <FeatureIcon className="text-white" size={28} />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-orange-100 leading-relaxed">{feature.description}</p>
               </div>
-            ))}
+            );
+})}
           </div>
 
           <div className="text-center mt-12">
