@@ -1,21 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isPagesOpen, setIsPagesOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const currentScrollY = window.scrollY;
+      
+      // Set scrolled state for styling
+      setIsScrolled(currentScrollY > 20);
+      
+      // Hide/show navbar based on scroll direction
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past 100px
+        setIsVisible(false);
+      } else {
+        // Scrolling up or at top
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const isActive = (path) => location.pathname === path;
 
@@ -24,6 +39,8 @@ const Header = () => {
       isScrolled 
         ? 'bg-white/95 backdrop-blur-md shadow-lg py-2' 
         : 'bg-white/90 backdrop-blur-sm py-3'
+    } ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
       {/* Main Navigation */}
       <nav className="container mx-auto px-4">
@@ -62,38 +79,16 @@ const Header = () => {
               About Us
             </Link>
             
-            <div className="relative group">
-              <button 
-                className={`nav-link flex items-center space-x-1 font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
-                  isActive('/services') 
-                    ? 'text-[#F26C45]' 
-                    : 'text-[#1E4C4C]'
-                }`}
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
-              >
-                <span>Services</span>
-                <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300" />
-              </button>
-              
-              <div 
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-4 z-50 transition-all duration-300 ${
-                  isServicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
-                }`}
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
-              >
-                <Link to="/services" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
-                  All Services
-                </Link>
-                <Link to="/patient-resources" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
-                  Patient Resources
-                </Link>
-                <Link to="/insurance" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
-                  Insurance & Payment
-                </Link>
-              </div>
-            </div>
+            <Link 
+              to="/services" 
+              className={`nav-link font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
+                isActive('/services') 
+                  ? 'text-[#F26C45]' 
+                  : 'text-[#1E4C4C]'
+              }`}
+            >
+              Services
+            </Link>
             
             <Link 
               to="/doctors" 
@@ -106,41 +101,27 @@ const Header = () => {
               Doctors
             </Link>
 
-            <div className="relative group">
-              <button 
-                className={`nav-link flex items-center space-x-1 font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
-                  ['/blog', '/testimonials', '/faq', '/careers'].some(path => isActive(path))
-                    ? 'text-[#F26C45]' 
-                    : 'text-[#1E4C4C]'
-                }`}
-                onMouseEnter={() => setIsPagesOpen(true)}
-                onMouseLeave={() => setIsPagesOpen(false)}
-              >
-                <span>Pages</span>
-                <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-300" />
-              </button>
-              
-              <div 
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-4 z-50 transition-all duration-300 ${
-                  isPagesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
-                }`}
-                onMouseEnter={() => setIsPagesOpen(true)}
-                onMouseLeave={() => setIsPagesOpen(false)}
-              >
-                <Link to="/blog" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
-                  Blog
-                </Link>
-                <Link to="/testimonials" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
-                  Testimonials
-                </Link>
-                <Link to="/faq" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
-                  FAQ
-                </Link>
-                <Link to="/careers" className="block px-6 py-3 text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors">
-                  Careers
-                </Link>
-              </div>
-            </div>
+            <Link 
+              to="/blog" 
+              className={`nav-link font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
+                isActive('/blog') || location.pathname.startsWith('/blog/')
+                  ? 'text-[#F26C45]' 
+                  : 'text-[#1E4C4C]'
+              }`}
+            >
+              Blog
+            </Link>
+
+            <Link 
+              to="/testimonials" 
+              className={`nav-link font-medium transition-all duration-300 hover:text-[#F26C45] relative ${
+                ['/testimonials', '/faq', '/careers', '/patient-resources', '/insurance'].some(path => isActive(path))
+                  ? 'text-[#F26C45]' 
+                  : 'text-[#1E4C4C]'
+              }`}
+            >
+              Pages
+            </Link>
             
             <Link 
               to="/contact" 
@@ -219,6 +200,34 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Testimonials
+            </Link>
+            <Link 
+              to="/faq" 
+              className="block text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors font-medium py-3 px-4 rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              FAQ
+            </Link>
+            <Link 
+              to="/careers" 
+              className="block text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors font-medium py-3 px-4 rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Careers
+            </Link>
+            <Link 
+              to="/patient-resources" 
+              className="block text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors font-medium py-3 px-4 rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Patient Resources
+            </Link>
+            <Link 
+              to="/insurance" 
+              className="block text-[#1E4C4C] hover:text-[#F26C45] hover:bg-[#F4F8F6] transition-colors font-medium py-3 px-4 rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Insurance
             </Link>
             <Link 
               to="/contact" 
